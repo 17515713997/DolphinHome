@@ -1,0 +1,240 @@
+
+<div id="order">
+    <div class="orde">
+        <div class="ord">
+            <a href="javascript:history.back(-1);" class="glyphicon glyphicon-chevron-left pull-left"></a>
+            <h4>海豚家</h4>
+        </div>
+        <div class="top" ng-click="oorrddeerr()" ng-if="!tjaddr">
+            <p>{{shopdata.DeliveryAddr}}</p>
+            <h3>{{shopdata.Deliveryhouse}}</h3>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <div>
+                <span style="width:20%">{{shopdata.DeliveryName}}</span>
+                <span>{{shopdata.Deliveryphone}}</span>
+            </div>
+            <img src="images/xianxian_03.gif" width="100%" style="margin-top:20px;">
+        </div>
+        <div ng-if="tjaddr" ng-click="oorrddeerr()" style="background: #fff">
+            <h3 style="margin-left: 10px;float: left;widows: 100%;">请填写地址</h3>
+            <img src="images/xianxian_03.gif" width="100%" style="margin-top:20px;">
+        </div>
+
+        <div id="peisong" style="z-index: 1000">
+            <div class="bottom">
+                <div class="box">
+                    <h3 class="text-center">配送到</h3>
+                    <span>X</span>
+                </div>
+                <div style="white-space: nowrap;
+                overflow-y: auto; height:200px;width:100%">
+                    <div class="addrhref" ng-click="updata(addr)">
+                        <img src="images/addr_03.gif" class="img1">
+                        <div class="pull-left" style="padding-left:20px;">
+                            <span style="color: #ea4146;">{{shopdata.DeliveryName}}</span>
+                            <span style="color: #ea4146;">{{shopdata.Deliveryphone}}</span>
+                            <div>
+                                <span class="pull-left">{{shopdata.DeliveryAddr}}</span>
+                                <span class="pull-left" style="padding-left:20px;width: 100px;
+                            display: block;
+                            height: 20px;
+                            line-height: 20px;
+                            overflow: hidden;
+                            float: left;">{{shopdata.Deliveryhouse}}</span>
+                            </div>
+                        </div>
+                        <img src="images/xiu_06.gif" class="img2">
+                    </div>
+
+                </div>
+                <div ng-click="addrrdda()" class="rdda">
+                    添加新地址
+                </div>
+            </div>
+
+        </div>
+        <script>
+            $("#peisong .bottom span").on("click", function () {
+                $("#peisong").fadeOut();
+            })
+        </script>
+
+<div class="shop">
+    <p style="border:1px solid #f2f2f2">共1件商品</p>
+    <div class="media">
+        <div class="media-left col-xs-3">
+            <img src="images/{{getordername.orderImg}}" alt="" class="img-responsive">
+        </div>
+        <div class="media-right col-xs-9">
+            <p style="font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{getordername.ordername}}</p>
+            <p>{{getordername.orderprice|currency}}<span class="pull-right">x{{getordername.orderNum}}</span></p>
+        </div>
+    </div>
+</div>
+        <div class="huiyuan">
+            <img src="images/vip_03.gif" width="30px">
+            <h5>本单再<a>减0元</a></h5>
+            <span>有机会获得优惠卷</span>
+            <div class="pull-right you">
+                <span>16.6/月</span>
+                <a style="color:#cd2654">立即开通</a>
+                <input type="checkbox" style="float: right;margin-top: 11%;">
+            </div>
+        </div>
+        <div class="mode">
+            <ul>
+                <li>
+                    <span class="pull-left" style="font-size:16px;">配送时间</span>
+                    <span class="pull-right" style="font-size:12px;">当天付款,承诺4~7天送达</span>
+                </li>
+                <li>
+                    <span class="pull-left" style="font-size:16px;">优惠券</span>
+                    <span class="pull-right" style="font-size:12px;">暂无可以优惠券</span>
+                </li>
+                <li>
+                    <span class="pull-left" style="font-size:16px;">金豆
+                        <span style="font-size:12px;">已使用200金豆,可抵2元</span>
+                    </span>
+                    <span class="pull-right">
+                        <input type="checkbox" checked class="pull-right" style="margin-top:-9px;">
+                    </span>
+                </li>
+                <li>
+                    <span class="pull-left" style="font-size:16px;">余额</span>
+                    <span class="pull-right" style="font-size:12px;">￥0.00</span>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-left ma">
+            <div>
+                <span>兑换码</span>
+                <input type="text" placeholder="选填,不区分大小写">
+                <input type="button" value="验证兑换码" class="pull-right button">
+            </div>
+        </div>
+        <div class="price">
+            <p>
+                <span class="pull-left">商品金额:</span>
+                <span class="pull-right">{{getordername.orderprice|currency}}元</span>
+            </p>
+            <div class='pull-right quzhifu'>
+                实付<span style="font-size:18px;font-weight:bold;">{{getordername.orderprice|currency}}元</span>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="navbar navbar-default navbar-fixed-bottom footer visible-xs" style="min-height: 50px;background: #fff">
+        <div class="container text-center">
+            <ul class="row nav nav-tabs nav-tabs-justified" style="margin-bottom:-20px;">
+                <li class="col-xs-4 pull-left" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                    <p>实付：{{getordername.orderprice|currency}}元</p>
+                </li>
+                <li class="col-xs-3 pull-right" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                    <button type="button" class="btn" style="background: #413e39;color: #faeb56"
+                        ng-click="Gobye()">去支付</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="aaa"
+    style="width: 100%; height: 100%; position: fixed; z-index: 8; background:rgba(0, 0, 0, 0.5);top: 0; left: 0; display: none">
+    <div id="ordermsg" style="background:#fff;width:100%;padding-bottom:60px;position:absolute;bottom:0;left:0;z-index: 10000">
+
+        <h4 class="row">
+             <a href="javascript:;" class="pull-left col-xs-4"  data-toggle="modal"  data-target="#canelmodel">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <p style="float: left;margin-left:8%"> 海豚收银台</p>
+           </h4>
+        <div>
+            <h4>请选择支付方式</h4>
+            <div class="media" style="border-bottom: 1px solid #f2f2f2">
+                <div class="media-left col-xs-2">
+                    <img src="images/weixin.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="right">
+                    <p>微信支付</p>
+                    <span>亿万用户的选择，更快更安全</span>
+                    <input type="radio" class="pull-right" style="margin-right: 20px" name="zhifu" value="微信" ng-model="pay" data-toggle="modal" data-target="#weixinpay">
+                </div>
+            </div>
+            <div class="media" style="border-bottom: 1px solid #f2f2f2">
+                <div class="media-left col-xs-2">
+                    <img src="images/zhifubao.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="right">
+                    <p>支付宝支付</p>
+                    <span style="color: grey;font-size: 12px">支付花呗分期</span>
+                    <input type="radio" class="pull-right" style="margin-right: 20px" name="zhifu" value="支付宝" ng-model="pay"  data-toggle="modal" data-target="#zhifubaopay">
+                </div>
+            </div>
+            <div class="media">
+                    <div class="media-left col-xs-2">
+                        <img src="images/zhifubao.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="right">
+                        <p>花呗支付</p>
+                        <span style="color: grey;font-size: 12px">支付花呗分期</span>
+                        <input type="radio" class="pull-right" style="margin-right: 20px" name="zhifu" value="花呗" ng-model="pay"  data-toggle="modal" data-target="#zhifubaopay">
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-block btn-info" style="margin:30px 0" ng-click="nowpay()">立刻支付</button>
+        </div>
+
+    </div>
+</div>
+
+
+  
+<div class="modal fade col-xs-12" id="zhifubaopay" tabindex="-1" role="dialog" style="top: 50%">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="wxonPay()"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">支付宝支付</h4>
+            </div>
+            <div class="modal-body col-xs-12">
+              <div class="col-xs-6 col-xs-offset-4" style="background-repeat:no-repeat;height: 100px;" >
+                <img src="images/zhiwen1.jpg" alt="" ng-click="zhiwen()" class="zhiwen">
+                <img src="images/zwsucc.jpg" alt="" ng-click="zhiwensuc()" class="zhiwensuc">
+                
+              </div>
+               <div style="margin-top: 100px">
+                      <button type="button" class="btn btn-default col-xs-5"  data-dismiss="modal">取消</button>
+                      <button type="button" class="btn btn-default col-xs-5 pull-right" ng-click="zhiwen()">成功</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+<div class="modal fade col-xs-10 col-xs-offset-1" id="canelmodel" tabindex="-1" role="dialog" style="top:50%">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center">确定要离开收银台吗</h4>
+  
+        </div>
+        <div class="modal-body text-center">
+          <p>挑了这么久，要放弃支付吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger col-xs-5" ng-click="jixupay()" data-dismiss="modal">继续支付</button>
+          <button type="button" class="btn btn-default col-xs-5 pull-right" ng-click="confirebye()">确认离开</button>
+        </div>
+      </div>
+    </div>

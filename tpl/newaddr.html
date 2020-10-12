@@ -1,0 +1,45 @@
+<!-- 添加新的地址页面 -->
+<div id="addr">
+    <div class="top">
+        <a href="javascript:history.back(-1)" class="pull-left">
+            <span class="glyphicon glyphicon-chevron-left" style="color:#000;margin-top:9px;padding-left:15px;"></span>
+        </a>
+        <h3 class="text-center" style="width: 84%;
+        float: left;">海豚家</h3>
+        <!-- <span class="pull-right" style="color:#fff;margin-top:9px;" ng-if="orderid.length > 18" ng-click="Delete()">删除</span> -->
+    </div>
+    <div class="divForm">
+        <ul class="addUl">
+            <li class="li1 form-group">
+                <label class="pull-left left">收货人</label>
+                <input type="text" class="pull-left input" placeholder="请填写收货人名字" ng-model="comment.name" name="name" >
+                {{comment.name}}
+            </li>
+            <li class="li2 form-group">
+                <label class="pull-left left">手机号</label>
+                <input type="text" class="pull-left input" placeholder="请填写收货人手机号码" ng-model="comment.tel" name="tel"
+                    ng-change="tel()">
+            </li>
+            <li class="li3 form-group">
+                <label class="pull-left left">省市区</label>
+                <div class="pull-left input">
+                    <select ng-model="provincesIndex" ng-options="j.province as j.province for j in provinces">
+                    </select>
+                    <select ng-model="citiesIndex" ng-disabled="!cities" ng-options="i.city as i.city for i in  cities">
+                    </select>
+                    <select ng-model="areasIndex" ng-disabled="!areas" ng-options="k.area as k.area for k in areas">
+                    </select>
+                </div>
+            </li>
+            <li class="li4 form-group">
+                <label class="pull-left left">收货地址</label>
+                <input type="text" class="pull-left input" placeholder="请输入地址" ng-model="comment.doorplate"
+                    name="doorplate">
+                <span class="pull-right glyphicon glyphicon-edit"></span>
+            </li>
+        </ul>
+    </div>
+    <a href="javascript:;" class="bg " ng-click="addAddrBtn()" ng-if="abc.length > 5">保存</a>
+    <!--<a href="javascript:;" class="bg" ng-click="addAddrBtn()" ng-if="orderid.length <= 18">保存并使用</a>-->
+     <!-- <a href="javascript:;" class="bg" ng-click="Ensure()" ng-if="abc.length > 5">确定</a>  -->
+</div>

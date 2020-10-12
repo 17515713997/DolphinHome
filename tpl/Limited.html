@@ -1,0 +1,32 @@
+<div class="Limited_head navbar  navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header pull-left">
+            <a href="#/p" class="navbar-brand">
+                &lt;
+            </a>
+        </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <li style="list-style: none;">
+                <a href="">海豚家</a>
+                <a href="" class="pull-right">分享</a>
+            </li>
+        </div>
+    </div>
+</div>
+<div class="Limited">
+    <div class="L_img">
+        <a href=""><img src="./images/Li.jpg" alt=""></a>
+    </div>
+    <div class="L_b" ng-repeat="i in getLimited">
+        <div class="media" style="height: 100px">
+            <div class="media-left col-xs-5">
+                 <img ng-src="./images/{{i.img_sm}}" alt="" class="img-responsive" style="height: 100px">
+            </div>
+            <div class="media-right">
+                <p style="font-size: 12px; overflow: hidden;text-overflow: ellipsis;">{{i.details}}</p>
+                <s>{{i.price}}</s>
+                <p class="pull-left">{{i.Seckillprice}}</p>
+            </div>
+        </div>
+    </div>
+</div>

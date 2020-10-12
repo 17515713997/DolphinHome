@@ -1,0 +1,350 @@
+<style>
+    #tab1,
+    #tab2 {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #tab1 span,
+    #tab2 span {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 2px 5px;
+
+    }
+
+    #my li,
+    #myym li {
+        height: 30px;
+    }
+
+    #my li a,
+    #myym li a {
+        padding: 0;
+        line-height: 30px;
+        color: #000;
+    }
+
+    #myym li a {
+        padding: 0 3px;
+    }
+
+    #my li span,
+    #myym li span {
+        display: none;
+    }
+
+    .nav-tabs {
+        border: none !important;
+    }
+
+    .nav-tabs>li.active>a {
+        border: none !important;
+    }
+</style>
+<div id="more">
+    <div class="more_m">
+        <a href="#/m" class="glyphicon glyphicon-chevron-left"></a>
+        <h4>海豚家</h4>
+        <span>分享</span>
+    </div>
+    <div class="pull-left" style="width:100%">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="active" style="width:50%;">
+                <a href="#tab1" class="text-center" style="color:#000">正在疯抢</a>
+                <span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;display:block;"></span>
+            </li>
+            <li style="width:50%;">
+                <a href="#tab2" class="text-center" style="color:#000">即将开始</a>
+                <span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span>
+            </li>
+        </ul>
+        <script>
+            $("#myTabs li").each(function () {
+                $(this).on("click", function () {
+                    $("#myTabs li span").css("display", "none");
+                    $(this).children($("#myTabs li span")).eq(1).css("display", "block");
+                })
+            })
+        </script>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                <span>距离结束{{oldDate | date :"HH:mm:ss"}}</span>
+                <ul class="nav nav-tabs" id="my">
+                    <li class="active"><a href="#t1">为您推荐</a><span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;display:block"></span></li>
+                    <li><a href="#t2">箱包配饰</a><span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span></li>
+                    <li><a href="#t3">服饰鞋靴</a><span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span></li>
+                    <li><a href="#t4">家居家纺</a><span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span></li>
+                    <li><a href="#t5">零食饮品</a><span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span></li>
+                </ul>
+                <script>
+                    $("#my li").each(function () {
+                        $(this).on("click", function () {
+                            $("#my li span").css("display", "none");
+                            $(this).children($("#my li span")).eq(1).css("display", "block");
+                        })
+                    })
+                </script>
+                <div class="tab-content pull-left">
+                    <div class="tab-pane active" id="t1">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 1}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 11%;
+                                margin-top: 2%;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="t2">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 2}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 11%;
+                                        margin-top: 2%;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="t3">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 3}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 11%;
+                                        margin-top: 2%;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="t4">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 4}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 11%;
+                                        margin-top: 2%;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="t5">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 5}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 11%;
+                                        margin-top: 2%;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <span>距离开始{{oldDate | date :"HH:mm:ss"}}</span>
+                <ul class="nav nav-tabs" id="myym" style="margin-top: 10px;">
+                    <li style="width:76px;"><a href="#tt1">为您推荐</a>
+                        <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                    </li>
+                    <li class="active" style="width:76px;"><a href="#tt2">箱包配饰</a>
+                        <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;display:block"></span>
+                    </li>
+                    <li style="width:76px;"><a href="#tt3">服饰鞋靴</a>
+                        <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                    </li>
+                    <li style="width:76px;"><a href="#tt4">家居家纺</a>
+                        <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                    </li>
+                    <li style="width:76px;"><a href="#tt5">零食饮品</a>
+                        <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                    </li>
+                </ul>
+                <script>
+                    $("#myym li").each(function () {
+                        $(this).on("click", function () {
+                            $("#myym li span").css("display", "none");
+                            $(this).children($("#myym li span")).eq(1).css("display", "block");
+                        })
+                    })
+                </script>
+                <div class="tab-content pull-left">
+                    <div class="tab-pane " id="tt1">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 1}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 6%;
+                                margin-top: 2%;width:0;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane active" id="tt2">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 2}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 6%;
+                                        margin-top: 2%;width:0;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="tt3">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 3}" class="pull-left" style="width:100%;"ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 6%;
+                                        margin-top: 2%;width:0;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="tt4">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid :4}" class="pull-left" style="width:100%;" ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 6%;
+                                        margin-top: 2%;width:0;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tab-pane" id="tt5">
+                        <ol style="width:100%">
+                            <li ng-repeat="i in Caryi | filter :{bid : 5}" class="pull-left" style="width:100%;" ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;float:left">
+                                <p>{{i.shopname}}</p>
+                                <div class="dou">
+                                    <span>返200金豆</span>
+                                    <a>已抢{{i.sold}}</a>
+                                </div>
+
+                                <div class="img pull-left" style="margin-left: 6%;
+                                        margin-top: 2%;width:0;">
+                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                    <img ng-src="images/{{i.Seckill_img}}">
+                                    <s class="f pull-left" style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#myTabs a").on("click", function (event) {
+            var ev = event || window.event;
+            ev.preventDefault();
+            $(this).tab("show");
+        })
+    })
+    $(function () {
+        $("#my a").on("click", function (event) {
+            var ev = event || window.event;
+            ev.preventDefault();
+            $(this).tab("show");
+        })
+    })
+
+    $(function () {
+        $("#myym a").on("click", function (event) {
+            var ev = event || window.event;
+            ev.preventDefault();
+            $(this).tab("show");
+        })
+    })
+</script>

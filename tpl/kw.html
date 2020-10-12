@@ -1,0 +1,31 @@
+<form action="" style="margin-top:15px;" id="kw">
+    <div class="form-group has-feedback kw_m">
+        <label for="keywords" class="sr-only">搜索关键字</label>
+        <input type="text" class="form-control" placeholder="搜索商品" name="kw" id="keywords" ng-model="kw">
+        <span class="form-control-feedback glyphicon glyphicon-search"></span>
+    </div>
+    <div class="kw_w" ng-click="off()">
+        取消
+    </div>
+</form>
+<p class="alert alert-danger text-center" ng-if="isNoList" style="padding:5px;float:left;width:100%;margin-top: 20px;">
+    您搜索的【{{kw}}】不存在
+</p>
+<div id="shopList" style="width:100%;margin-top: 20px;">
+    <div class="list-group">
+        <a href="javascript:;" class="list-group-item" ng-repeat="j in kwList"
+            style="border:none;padding:0;float:left;width:100%;">
+            <ul style="margin:0;padding:5px 5px;">
+                <li ng-click="details(j)" style="border-bottom:1px solid #ccc;width:100%">
+                    <span>{{j.shopname}}</span>
+                </li>
+            </ul>
+        </a>
+    </div>
+</div>
+<div class="pull-left" id="hot">
+    <h4>热门搜索</h4>
+    <div class="hot" ng-repeat="kw in Caryi | filter :{bid:1}" ng-click="details(kw)">
+        <span>{{kw.shopname}}</span>
+    </div>
+</div>

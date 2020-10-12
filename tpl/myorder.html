@@ -1,0 +1,199 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript:history.back(-1)" class="navbar-brand">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="javascript:history.back(-1)" class="navbar-brand">
+                <p>海豚家</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<form action="" style="padding: 60px 0 0 0">
+    <div class="form-group has-feedback">
+        <label for="keywords" class="sr-only">搜索关键字</label>
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        <a href="#/kw"><input type="text" class="form-control" placeholder="搜索商品" name="kw" id="keywords" ng-model="kw" ></a>
+        
+    </div>
+</form>
+
+<div>
+    <ul>
+        <li style="width:32%;background:#efefef;height:50px;float:left;margin-right:5px">
+            <p style="line-height: 50px" class="text-center">预订单</p>
+        </li>
+        <li style="width:32%;background:#efefef;height:50px;float:left;margin-right:5px">
+            <p style="line-height: 50px" class="text-center">膨胀单</p>
+        </li>
+        <li style="width:32%;background:#efefef;height:50px;float:left;margin-right:5px">
+            <p style="line-height: 50px" class="text-center">一分购订单</p>
+        </li>
+    </ul>
+</div>
+
+<div class="wbnav" style="padding:60px 0">
+    <div class="category">
+        <ul >
+            <li class="active">全部</li>
+            <li>待付款</li>
+            <li>待收货</li>
+            <li>已完成</li>
+            <li>已取消</li>
+        </ul>
+    </div>
+    <div class="cont active" style="margin-bottom: 20px">
+            <ul>
+                <li style="width: 100%;background:#f2f2f2" ng-repeat="i in getMyorder">
+                    <a href="javascript:;">
+                        <div class="row" style="padding:5px">
+                            <p class="pull-left">{{i.orderTime|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                            <p class="pull-right" >{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</p>
+                        </div>
+                        <div class="media" style="border-top:1px solid grey;border-bottom:1px solid grey;margin:0">
+                            <div class="media-left col-xs-4" style="padding-top:20px">
+                                <img src="images/{{i.orderImg}}" alt="" class="img-responsive">
+                            </div>
+                            <div class="media-right col-xs-8" style="margin-top:40px">
+                                <h4 style="color:#000;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{i.ordername}}</h4>
+                                <div class="row">
+                                    <span style="color: grey" class="col-xs-6" ng-if="j.model">{{i.model}}</span>
+                                    <span style="color: grey;font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;" class="col-xs-6">{{i.ordername}}</span>
+                                </div>
+                                <p class="pull-right">共{{i.orderNum}}件</p>
+                                <p>合计:{{i.allprice|currency}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="background: gray;width: 40%;border-radius: 10px; margin-top: 20px;height:20px" class="pull-left col-xs-offset-3" ng-if="i.orderstatu==0">
+                                <p style="font-size:11px;margin-left: 5px;color: #000" >支付剩余时间:<span id=
+                                    "Time" style="color: #000">{{i.countTime}}</span></p>
+                            </div>
+                            <a href="javascript:;">
+                                <button type="button" style="margin:10px" ng-class="{'pull-right':true,'btn btn-info':(i.orderstatu==='0')}"
+                                ng-click="go(e,i)">{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</button>
+                            </a>  
+                        </div>
+    
+                    </a>
+                </li>
+        </ul>
+    </div>
+
+    <div class="cont">
+        <ul>
+            <li style="width: 100%;background:#f2f2f2" ng-repeat="i in getMyorder" ng-if="i.orderstatu==0">
+                <a href="javascript:;">
+                    <div class="row" style="padding:5px">
+                        <p class="pull-left">{{i.orderTime|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                        <p class="pull-right" >{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</p>
+                    </div>
+                    <div class="media" style="border-top:1px solid grey;border-bottom:1px solid grey;margin:0">
+                        <div class="media-left col-xs-4" style="padding-top:20px">
+                            <img src="images/{{i.orderImg}}" alt="" class="img-responsive">
+                        </div>
+                        <div class="media-right col-xs-8" style="margin-top:40px">
+                            <h4 style="color:#000;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{i.ordername}}</h4>
+                            <div class="row">
+                                <span style="color: grey" class="col-xs-6" ng-if="j.model">{{i.model}}</span>
+                                <span style="color: grey;font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;" class="col-xs-6">{{i.ordername}}</span>
+                            </div>
+                            <p class="pull-right">共{{i.orderNum}}件</p>
+                            <p>合计:{{i.allprice|currency}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="background: gray;width: 40%;border-radius: 10px; margin-top: 20px;height:20px" class="pull-left col-xs-offset-3">
+                            <p style="font-size:11px;margin-left: 5px;color: #000">支付剩余时间:<span id=
+                                "Time" style="color: #000">{{i.countTime}}</span></p>
+                        </div>
+                        <a href="javascript:;">
+                            <button type="button" style="margin:10px" ng-class="{'pull-right':true,'btn btn-info':(i.orderstatu==='0')}"
+                            ng-click="go(e,i)">{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</button>
+                        </a>  
+                        
+                    </div>
+
+                </a>
+            </li>
+            <ul>
+    </div>
+    <div class="cont" >
+            <ul>
+                <li style="width: 100%;background:#f2f2f2" ng-repeat="i in getMyorder" ng-if="i.orderstatu==1">
+                    <a href="javascript:;">
+                        <div class="row" style="padding:5px">
+                            <p class="pull-left">{{i.orderTime|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                            <p class="pull-right" >{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</p>
+                        </div>
+                        <div class="media" style="border-top:1px solid grey;border-bottom:1px solid grey;margin:0">
+                            <div class="media-left col-xs-4" style="padding-top:20px">
+                                <img src="images/{{i.orderImg}}" alt="" class="img-responsive">
+                            </div>
+                            <div class="media-right col-xs-8" style="margin-top:40px">
+                                <h4 style="color:#000;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{i.ordername}}</h4>
+                                <div class="row">
+                                    <span style="color: grey" class="col-xs-6" ng-if="j.model">{{i.model}}</span>
+                                    <span style="color: grey;font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;" class="col-xs-6">{{i.ordername}}</span>
+                                </div>
+                                <p class="pull-right">共{{i.orderNum}}件</p>
+                                <p>合计:{{i.allprice|currency}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a href="javascript:;">
+                                <button type="button" style="margin:10px" ng-class="{'pull-right':true,'btn btn-info':(i.orderstatu==='0')}"
+                                ng-click="go(e,i)">{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</button>
+                            </a>  
+                            
+                        </div>
+                    </a>
+                </li>
+            <ul>
+    </div>
+    <div class="cont">
+        <ul>
+            <li>
+                <a href="#">
+                    4
+                </a>
+            </li>
+            <ul>
+    </div>
+    <div class="cont">
+            <ul>
+                    <li style="width: 100%;background:#f2f2f2" ng-repeat="i in getMyorder" ng-if="i.orderstatu==4">
+                        <a href="javascript:;">
+                            <div class="row" style="padding:5px">
+                                <p class="pull-left">{{i.orderTime|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                <p class="pull-right" >{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</p>
+                            </div>
+                            <div class="media" style="border-top:1px solid grey;border-bottom:1px solid grey;margin:0">
+                                <div class="media-left col-xs-4" style="padding-top:20px">
+                                    <img src="images/{{i.orderImg}}" alt="" class="img-responsive">
+                                </div>
+                                <div class="media-right col-xs-8" style="margin-top:40px">
+                                    <h4 style="color:#000;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">{{i.ordername}}</h4>
+                                    <div class="row">
+                                        <span style="color: grey" class="col-xs-6" ng-if="j.model">{{i.model}}</span>
+                                        <span style="color: grey;font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;" class="col-xs-6">{{i.ordername}}</span>
+                                    </div>
+                                    <p class="pull-right">共{{i.orderNum}}件</p>
+                                    <p>合计:{{i.allprice|currency}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="javascript:;">
+                                    <button type="button" style="margin:10px" ng-class="{'pull-right':true,'btn btn-info':(i.orderstatu==='0')}"
+                                    ng-click="go(e,i)">{{(i.orderstatu==="3")?"已完成":(i.orderstatu==="2")?"去评价":(i.orderstatu==="1")?"配送中":(i.orderstatu==="0")?"待付款":"已取消"}}</button>
+                                </a>  
+                                
+                            </div>
+                        </a>
+                    </li>
+                <ul>
+    </div>
+</div>

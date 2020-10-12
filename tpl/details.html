@@ -1,0 +1,117 @@
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/m" class="navbar-brand pull-left" style="width:25%">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a href="javascript:history.back(-1)" class="navbar-brand pull-left" style="width:75%">
+                    <h4 style="margin:0">100%正品 假一赔十</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="padding:60px 0 0 0;" ng-repeat="i in data">
+        <img ng-src="images/{{i.img_lg}}" alt="图片" class="img-responsive col-xs-12" style="padding: 0">
+        <div style="float: left;width: 100%;background:#f2f2f2;">
+            <div style="padding: 20px 20px 10px 20px">
+                <div class="row">
+                    <h3 class="pull-left" style="margin:0;">{{i.price}}
+                        <s style="color: grey;font-size:12px;margin-left:5px">{{i.Seckillprice}}</s>
+                    </h3>
+                    <img src="images/vip.png" alt="" class="img-responsive" style="width: 20px;
+                    margin-top: 10px;float: left;margin-left: 1%;">
+                </div>
+                <div class="row">
+                    <ul>
+                        <li>
+                            <h4 class="pull-left col-xs-8" style="margin:0;padding-left:7px;height: 40px;
+                            line-height: 40px;overflow: hidden;">{{i.shopName}}</h4>
+                            <div>
+                                <li class="col-xs-2 pull-right" style="cursor: pointer;">
+                                    <span class="glyphicon glyphicon-share" style="margin-left: 5px"></span><br>
+                                    <span style="width: 30px;
+                                    display: block;">分享</span> 
+                                </li>
+                                <li class="col-xs-2 pull-right" style="cursor: pointer;">
+                                    <span class="glyphicon glyphicon-heart-empty" style="margin-left: 5px"></span><br>
+                                    <span style="width: 30px;
+                                    display: block;">收藏</span>    
+                                </li>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h6 style="height: 30px;line-height: 30px;margin-top:0;padding-left:11px;">
+                    <span class="pull-left" >已售{{i.sold}}</span>
+                </h6>
+            </div>
+            <div
+                style="height:80px;background:#292520;color:#f1ebdc;line-height: 80px;width: 100%;float: left;border-radius:10px;margin-top: 30px;">
+                <p style="padding-left: 20px" class="pull-left">现开通会员,立省25元</p>
+    
+                <button type="button" class="btn btn-dafault pull-right"
+                    style="background: #f6ecbb;margin:20px;color:#000">立即开通</button>
+            </div>
+            <div>
+                <ul>
+                    <li class="pull-left col-xs-3 text-center" style="padding:20px 0">•海外直采</li>
+                    <li class="pull-left col-xs-3 text-center" style="padding:20px 0">•24H发货</li>
+                    <li class="pull-left col-xs-3 text-center" style="padding:20px 0">•超值低价</li>
+                    <li class="pull-left col-xs-3 text-center" style="padding:20px 0">•7天退换</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="background: #f2f2f2;margin: 20px 0;float: left;width: 100%;padding: 10px">
+        <h4 class="col-xs-3" style="margin-top: 6%;">保障</h4>
+        <p class="col-xs-9" style="margin:0;">当天付款，预计4~7天送达 晚到必赔•假一赔十•上门取件•极速退款</p>
+    </div>
+    <div style="background: #f2f2f2;float: left;width: 100%;padding: 15px">
+        <img ng-src="images/{{bImg}}" style="width: 28%;
+        padding-left: 0;" class="pull-left col-xs-2">
+        <h4 class="col-xs-7" style="padding:0;width:44%;overflow:hidden;line-height:45px;height: 45px;">{{shop}}</h4>
+        <button type="button" class="btn  pull-right" style="background: #c7c6be;margin-top: 4%;">进入品牌</button>
+    </div>
+    <div style="background: #f2f2f2;margin: 20px 0;float: left;width: 100%;padding: 10px">
+        <h4>热销推荐</h4>
+        <p class="col-xs-12">{{bentm}}</p>
+    </div>
+    <div style="margin-bottom: 60px;">
+        <h3>商品详情</h3>
+        <ul>
+            <li>
+                <img ng-src="images/{{dabj}}" alt="" class="img-responsive">
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="navbar navbar-default navbar-fixed-bottom footer visible-xs" style="min-height: 50px;background: #fff">
+            <div class="container text-center">
+                <ul class="row nav nav-tabs nav-tabs-justified" style="margin-bottom:-20px;">
+                    <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0"
+                        ng-click="jump('/a')">
+                        <span class="glyphicon glyphicon-home"></span><br>
+                        首页
+                    </li>
+                    <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                        <span class="glyphicon glyphicon-headphones"></span><br>
+                        客服
+                    </li>
+                    <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0"
+                        ng-click="jump('/m')">
+                        <span class="glyphicon glyphicon-home"></span><br>
+                        购物车
+                    </li>
+                    <li class="col-xs-3" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                        <button type="button" class="btn" style="background: #faeb56;color: #413e39"
+                            ng-click="joincar(data)">加入购物车</button>
+                    </li>
+                    <li class="col-xs-3" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                        <button type="button" class="btn" style="background: #413e39;color: #faeb56"
+                            ng-click="nowBuy(data)">立即购买</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,113 @@
+<div class="container" style="overflow-x: hidden;
+    overflow-y: overlay;padding-bottom: 60px">
+    <div class="row">
+        <div class="Shopheader col-sm-12">
+            <p class="pull-left" style="margin-top: 5px;">
+                <a href="javascript:history.back(-1)">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </p>
+            <p class="shopCart">购物车</p>
+            <p class="shopg">管理</p>
+        </div>
+        <div class="Cartmembers col-sm-12">
+            <a href=""><img src="images/heika.jpg" alt="" style="margin-top:-3px"></a>
+            <span style="color: #fce2a2; line-height: 5rem;">开通会员立省 <span style="color: red;">99</span> 元</span
+                class="col-sm-4">
+            <a style="line-height: 5rem;float: right;color: #fce2a2;" href="">立即开启<span
+                    style="line-height: 5rem;color: #fce2a2;" class="glyphicon glyphicon-menu-right"></span></a>
+        </div>
+        <div class="commodity col-sm-12" ng-repeat="i in getshop" style="padding-bottom: 60px">
+            <div class="com">
+                <input type="checkbox" class="che cheb" checked ng-click="cheb($index)">
+                <span>{{i.sbrand}}</span>
+                <span style="color: red; float: right;" class="glyphicon glyphicon-menu-right"></span>
+                <span style="color: red;float: right;margin: 0 1rem;">优惠卷</span>
+                <span style="float: right;">以免运费</span>
+
+                <div style="margin:2rem 2rem;"><span
+                        style="width: 2rem;background-color: #ffefef; height: 3rem;border-radius: 1rem; color: red;">优惠卷</span>满99减10
+                </div>
+
+                <div class="shop" style="background:#ccc;">
+                    <div class="col-xs-1">
+                        <input type="checkbox" style="margin-top: 20px" class="che chep" checked ng-click="checkPrice($index)">
+                    </div>
+                    <div class="col-xs-2">
+                        <img src="images/{{i.orderImg}}" style="width: 5rem;" alt="">
+                    </div>
+                    <div class="col-xs-5"
+                        style="margin-left: 1rem; font-size: 1.2rem; display:inline-block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                        <span>{{i.ordername}}</span>
+                        <br>
+                        <span style="color:grey;font-size:10px" ng-if="!i.model">{{i.ordername}}</span>
+                        <span style="color:grey;font-size:10px" ng-if="i.model">{{i.model}}</span>
+                    </div>
+
+                    <div class="col-xs-2" style="margin: 1rem  3rem;">
+                        {{i.allprice|currency}}
+                    </div>
+                    <p class="pull-right">
+                        <input type="button" value="-" ng-click="checkNum('-',i)" ng-disabled="i.orderNum<=1"
+                            ng-if="i.orderNum>=1" style="border-radius: 50px;border:none;width: 20px">
+                        <input type="text" ng-model="i.orderNum" disabled class="tex"
+                            style="width: 30px;text-align:center;border-radius: 50%;border:none;border-radius: 50px" ng-if="i.orderNum>0">
+                        <input type="button" value="+" ng-click="checkNum('+',i)"
+                            style="border-radius: 50px;border:none;width: 20px">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-sm-12 col-xs-12 navbar-fixed-bottom"
+            style="height: 50px;background-color: #ffffff;border-top: 1px solid gray;">
+            <div class="col-sm-3 col-xs-2" style="height: 50px; margin-top: 10px;">
+                <a href="" ng-click="allSelect()">全选</a>
+            </div>
+            <div class="col-sm-3 col-xs-3" style="height: 50px; margin-top: 10px;">
+                    <a href="" ng-click="noallSelect()">全不选</a>
+                </div>
+            <div class="col-sm-4 col-xs-4" style="height: 50px;">
+                <h4 style="font-size: 1.4rem;">合计:{{allprice|currency}}</h4>
+                <a href=""></a>
+            </div>
+            <div class="col-sm-3 col-xs-3" style="margin-top: 10px;"> <button
+                    style="color: black; width: 80px; height: 30px; background-color: #facc7b;font-size: 12px;"
+                    type="button" ng-click="jisuan()" data-toggle="modal" data-target="#Settlement">结算</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="modal fade col-xs-12" id="Settlement" tabindex="-1" role="dialog" style="top: 40%">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="wxonPay()"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">请分开结算以下商品</h4>
+            </div>
+            <div class="modal-body col-xs-12">
+                <label for="shop" ng-repeat="j in getshop" style="width: 100%" ng-click="aaa(j)">
+                        <input type="radio" style="margin-right: 5px"  name="shop" id="shop">{{j.sbrand}}
+                </label>
+             <!-- <ul>
+                 <li ng-repeat="j in getshop" style="width: 100%"><h4><input type="radio" style="margin-right: 5px"  name="shop" value="{{j.sName}}" ng-model="shopname">{{j.sbrand}}</h4></li>
+             </ul> -->
+               <div style="margin-top: 100px">
+                      <button type="button" class="btn btn-default col-xs-5"  data-dismiss="modal">返回购物车</button>
+                      <button type="button" class="btn btn-default col-xs-5 pull-right" ng-click="account()" data-dismiss="modal">去结算</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div>
+        </div>
+      </div>

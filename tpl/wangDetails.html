@@ -1,0 +1,122 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript:history.back(-1)" class="navbar-brand">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <img src="images/{{getwangdetails.headImg}}" alt="" class="pull-left"
+                style="margin-top: 5px;margin-right: 5px">
+            <p class="pull-left" style="margin: 0;">{{getwangdetails.name}}</p>
+            <br>
+            <p class="pull-left" style="margin: 0;">{{getwangdetails.orderTime|date:'yyyy-MM-dd'}}</p>
+            <button type="button" class="btn btn-danger" style="margin: -20px 0 0 10px">关注</button>
+        </div>
+    </div>
+</div>
+
+<div style="padding: 60px 0 10px 0">
+    <div style="overflow: hidden">
+        <ul style="width: 1920px" class="allImg">
+            <li ng-repeat="i in getwangdetailsImg" style="float: left;width: 20%" class="img"><img src="images/{{i}}"
+                    alt="" class="img-responsive"></li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<div style="background: #f2f2f2;border-radius: 10px;margin-bottom: 20px;">
+    <div style="padding: 20px;">
+        <h4>{{getwangdetails.comment}}</h4>
+        <p style="line-height: 40px">{{getwangdetails.details}}</p>
+    </div>
+
+</div>
+
+<div style="background: #f2f2f2;border-radius: 10px;margin-bottom: 20px;">
+    <div style="padding: 20px;">
+        <div class="media">
+            <div class="media-left col-xs-4">
+                <img src="images/{{getshopdetails.shopImg}}" alt="" class="img-responsive">
+            </div>
+            <div class="media-right col-xs-8">
+                <h5>{{getshopdetails.shopname}}</h5>
+                <p style="font-size: 12px;white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">
+                    {{getshopdetails.shopDetails}}</p>
+                <p class="pull-left">{{getshopdetails.nowprice | currency:'￥'}}</p>
+                <s style="color: grey;font-size:12px;margin-left:5px">{{getshopdetails.oldprice | currency:'￥'}}</s>
+                <button type="button" class="btn btn-danger pull-right" ng-click="gobuy()">立即购买</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="background: #f2f2f2;border-radius: 10px;margin:0 0 80px 0">
+    <div style="padding: 20px;">
+        <h4>共10条评论</h4>
+        <ul>
+            <li style="width:100%">
+                <img src="images/{{getwangdetails.headImg}}" alt="" class="pull-left"
+                    style="margin-top: 10px;margin-right: 5px;border-radius: 50%">
+                <div class="input-group col-xs-9">
+                    <input type="text" class="form-control" placeholder="对TA说点什么吧" aria-describedby="basic-addon1"
+                        style="background: #f2f2f2; margin-top:12px;">
+                </div>
+            </li>
+            <li style="width:100%">
+                <img src="images/head3.jpg" alt="" class="pull-left"
+                    style="margin-top: 10px;margin-right: 5px;border-radius: 50%">
+                <h5>大美丽</h5>
+                <p>漂亮呦</p>
+            </li>
+        </ul>
+        <button type="button" class="btn btn-default text-center" style="margin-left: 37%" data-toggle="modal"
+            data-target="#morecomment">查看更多评论</button>
+
+    </div>
+    <div class="modal fade col-xs-12" id="morecomment" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">共1条评论</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                            <li>
+                                    <img src="images/head3.jpg" alt="" class="pull-left"
+                                        style="margin-top: 10px;margin-right: 5px;border-radius: 50%">
+                                    <h5>大美丽</h5>
+                                    <p>漂亮呦</p>
+                                </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+            <div class="navbar navbar-default navbar-fixed-bottom footer visible-xs" style="margin-top:100px;">
+                <div class="container text-center">
+                    <ul class="row nav nav-tabs nav-tabs-justified" style="line-height:30px;margin-bottom:-20px;">
+                        <li class="col-xs-4 btn-default" style="cursor: pointer;" ng-click="jump('/m')">
+                            <span class="glyphicon glyphicon-edit"></span><br>
+                            1
+                        </li>
+                        <li class="col-xs-4 btn-default" style="cursor: pointer;" ng-click="jump('/wb')">
+                            <span class="glyphicon glyphicon-heart-empty"></span><br>
+                            598
+                        </li>
+                        <li class="col-xs-4 btn-default" style="cursor: pointer;" ng-click="jump('/m')">
+                            <span class="glyphicon glyphicon-star-empty"></span><br>
+                            0
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>

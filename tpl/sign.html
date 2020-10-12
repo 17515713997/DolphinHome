@@ -1,0 +1,51 @@
+<div class="sign">
+    <h4 ng-click="close()">关闭</h4>
+    <div class="row" style="margin-top: 50px;">
+        <img src="images/ht.jpg" alt="" class="img-reponsive col-xs-2">
+        <h5>海豚家app申请使用</h5>
+    </div>
+    <h3>你的微信头像、昵称、地区和性别信息</h3>
+    <div style="margin-top: 80px">
+        <div class="msg">
+            <h4 style="color: #ccc">您可以选择不同的个人信息登陆</h4>
+        </div>
+        <div class="msges">
+                <div class="media" ng-click ="xiaoshazi(3)">
+                    <div class="media-left col-xs-3">
+                        <img src="images/self.jpg" alt="" class="img-responsive" style="padding: 10px">
+                    </div>
+                    <div class="media-right col-xs-7" >
+                         <h5 class="name">野性却干净</h5>
+                         <h5>微信个人信息</h5>
+                         <input class="pull-right Ipt" type="checkbox" ng-show="aaaaa" ng-model="aaaaa" style="margin-top:-30px"></span>
+                    </div>
+                    
+                </div>
+               
+        </div>
+        <div class="msges" ng-if="headImg&&codeName.innerHTML">
+            <div class="media" ng-click ="xiaoshazi(4)">
+                <div class="media-left col-xs-3">
+                    <img src="images/{{headImg}}" alt="" class="img-responsive" style="padding: 10px">
+                </div>
+                <div class="media-right col-xs-7" >
+                     <h5 class="name">{{codeName.innerHTML}}</h5>
+                     <h5>******</h5>
+                     <input class="pull-right Ipt" type="checkbox" style="margin-top:-30px"  ng-model="bbbbb" ng-show="bbbbb"></span>
+                </div>
+                
+            </div>
+           
+    </div>
+        <div class="msg">
+            <a href="#/nu"><button type="button" class="btn btn-default btn-block" >新建用户信息</button></a>
+           
+        </div> 
+
+    </div>
+
+<div style="margin-top:100px">
+    <button type="button" class="btn btn-success col-xs-7 col-xs-offset-2" style="margin-bottom: 20px" ng-click="agreen()" ng-disabled="!a">同意</button>
+    <button type="button" class="btn btn-default col-xs-7 col-xs-offset-2">拒绝</button>
+</div>
+</div>

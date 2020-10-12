@@ -1,0 +1,28 @@
+<div class="navbar navbar-fixed-top ng-scope">
+    <div class="container">
+        <div class="navbar-header pull-left">
+            <a href="#/p" class="navbar-brand">
+                &lt;
+            </a>
+        </div>
+        <div style="margin-top: 15px; text-align: center;">
+            <li style="list-style: none;">
+                <a href="#/addr/{{orderId}}">海豚家</a>
+            </li>
+        </div>
+    </div>
+</div>
+
+<div class="brand">
+    <div class="head">
+        <h2>请选择您要验证的品牌</h2>
+    </div>
+    <div class="b_body">
+        <div class="b_img" ng-repeat="i in getbrand">
+            <img ng-src="./images/{{i.b_img}}" alt="">
+        </div>
+    </div>
+    <div class="b_footer">
+        <h2>为什么你买的商品外包装不一样</h2>
+    </div>
+</div>

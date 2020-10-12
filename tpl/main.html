@@ -1,0 +1,1372 @@
+<style>
+    .container {
+        padding: 0;
+    }
+
+    .nav-tabs {
+        border: none !important;
+    }
+
+    .nav-tabs>li.active>a {
+        border: none !important;
+    }
+
+    @media screen and (min-width:768px) {
+        #top .top_input div.right {
+            margin-top: 10px;
+            width: 6%;
+        }
+    }
+</style>
+<div id="top" style="overflow: hidden;">
+    <div style="padding:0 10px;background:#fddf01;">
+        <div class="top_input">
+            <div class="left">
+                <img src="images/dou.gif" width="42px" onclick="alert('签到成功')">
+            </div>
+            <div class="center">
+                <input type="text" placeholder="搜索商品" class="pull-left" ng-click="kw()">
+            </div>
+            <div class="right" ng-click="oClass()">
+                <img src="images/lei.gif" style="width:80%;margin-left: 10%" class="img-responsive">
+                <span style="font-size: 14px;">分类</span>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="!wxName">
+        <h1 class="text-center"><a href="#/s">请先登录</a></h1>
+
+    </div>
+    <div class="div" ng-if="wxName">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="active">
+                <a href="#tab1">首页</a>
+                <span style="display:block;"></span>
+            </li>
+            <li>
+                <a href="#tab2">预热</a>
+                <span></span>
+            </li>
+            <li>
+                <a href="#tab3">限量</a>
+                <span></span>
+            </li>
+            <li>
+                <a href="#tab4">中小样</a>
+                <span></span>
+            </li>
+            <li>
+                <a href="#tab5">新品</a>
+                <span></span>
+            </li>
+            <li>
+                <a href="#tab6">清仓</a>
+                <span></span>
+            </li>
+            <script>
+                $("#myTabs li").each(function () {
+                    $(this).on("click", function () {
+                        $("#myTabs li span").css("display", "none");
+                        $(this).children($("#myTabs li span")).eq(1).css("display", "block");
+                    })
+                })
+            </script>
+        </ul>
+        <div class="tab-content">
+            <!-- 首页 -->
+            <div class="tab-pane active" id="tab1">
+                <img src="images/bj_03.gif" style="padding: 0 10px;" onclick="alert('新人专享活动已取消')">
+                <ol class="ol">
+                    <li>
+                        <img src="images/cai_03.gif">
+                        <span>海外直采</span>
+                    </li>
+                    <li>
+                        <img src="images/zheng_03.gif">
+                        <span>假一赔十</span>
+                    </li>
+                    <li>
+                        <img src="images/zhi_03.gif">
+                        <span>超值低价</span>
+                    </li>
+                    <li>
+                        <img src="images/tui_05.gif">
+                        <span>售后无忧</span>
+                    </li>
+                </ol>
+                <div class="divdiv" ng-click="jump('/wb')">
+                    <div>
+                        <a href="#/wb">
+                            <img src="images/kou_03.gif" alt="">
+                            <span>美妆</span>
+                        </a>
+                    </div>
+                    <div>
+                        <img src="images/kou1_03.gif" alt="">
+                        <span>时尚</span>
+                    </div>
+                    <div>
+                        <img src="images/kou2_03.gif" alt="">
+                        <span>家居</span>
+                    </div>
+                    <div>
+                        <img src="images/kou3_03.gif" alt="">
+                        <span>营养保健</span>
+                    </div>
+                    <div>
+                        <img src="images/kou5_03.gif" alt="">
+                        <span>服饰</span>
+                    </div>
+                    <div>
+                        <img src="images/jin1_03.gif" alt="">
+                        <span>赚金豆</span>
+                    </div>
+                    <div>
+                        <img src="images/jin2_03.gif" alt="">
+                        <span>0元领</span>
+                    </div>
+                    <div>
+                        <img src="images/jin3_03.gif" alt="">
+                        <span>9块9包邮</span>
+                    </div>
+                    <div>
+                        <img src="images/jin4_03.gif" alt="">
+                        <span>天天免单</span>
+                    </div>
+                    <div>
+                        <img src="images/jin5_03.gif" alt="">
+                        <span>1分抽奖</span>
+                    </div>
+                </div>
+                <div class="vidvid">
+                    <div>
+                        <img src="images/kou2_03.gif" alt="">
+                        <span>家居</span>
+                    </div>
+                    <div>
+                        <img src="images/kou3_03.gif" alt="">
+                        <span>营养保健</span>
+                    </div>
+                    <div>
+                        <img src="images/kou5_03.gif" alt="">
+                        <span>服饰</span>
+                    </div>
+                    <div>
+                        <img src="images/mu_03.gif" alt="">
+                        <span>母婴</span>
+                    </div>
+                    <div>
+                        <img src="images/mu1_03.gif" alt="">
+                        <span>扫码进群</span>
+                    </div>
+                    <div>
+                        <img src="images/jin3_03.gif" alt="">
+                        <span>9块9包邮</span>
+                    </div>
+                    <div>
+                        <img src="images/jin4_03.gif" alt="">
+                        <span>天天免单</span>
+                    </div>
+                    <div>
+                        <img src="images/jin5_03.gif" alt="">
+                        <span>1份抽奖</span>
+                    </div>
+                    <div>
+                        <img src="images/mu2_03.gif" alt="">
+                        <span>限时白送</span>
+                    </div>
+                    <div>
+                        <img src="images/mu3_03.gif" alt="">
+                        <span>免费试用</span>
+                    </div>
+                </div>
+                <div class="span1">
+                    <p></p>
+                </div>
+                <div class="span2">
+                    <p></p>
+                </div>
+                <div class="img">
+                    <img src="images/bj1_03.gif" alt="">
+                </div>
+                <div class="ka">
+                    <div class="nian">
+                        <div class="top">
+                            <img src="images/ka_03.gif" alt="">
+                            <p>年卡专区</p>
+                        </div>
+                        <div class="bottom pull-right">
+                            <a href="">
+                                开通年卡享特权
+                                <span class="caret"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bottom_m" style="white-space: nowrap;overflow-x: auto;">
+                        <ol class="goudan" id="goudan">
+                            <li ng-repeat="i in Caryi | filter : {bid:13}" ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" width="95px" height="81px">
+                                <p style="width:100%">{{i.shopname}}</p>
+                                <s>{{i.oldprice|currency}}</s>
+                                <div class="v">
+                                    <img ng-src="images/{{i.tejia}}" alt="">
+                                    <p><em></em>{{i.nowprice|currency}}</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="pull-left sha">
+                        <img src="images/miao_03.gif" alt="">
+                        <ul class="nav nav-tabs" id="myTabs1">
+                            <li class="active"><a href="#tab11">正在疯抢</a>
+                                <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;display:block"></span>
+                            </li>
+                            <li><a href="#tab12">明天10点场</a>
+                                <span style="width: 50%; height: 2px;background: #000;
+                                margin-left: 25%;"></span>
+                            </li>
+                        </ul>
+                        <script>
+                            $("#myTabs1 li").each(function () {
+                                $(this).on("click", function () {
+                                    $("#myTabs1 li span").css("display", "none");
+                                    $(this).children($("#myTabs1 li span")).eq(1).css("display", "block");
+                                })
+                            })
+                        </script>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab11">
+                                <div style="margin-top:10px; background:#f5f5f5;height:30px;line-height:30px;width:100%;"
+                                    class="pull-left date">
+                                    距结束{{oldDate | date:"HH:mm:ss"}}
+                                </div>
+                                <ul class="nav nav-tabs" id="my">
+                                    <li class="active">
+                                        <a href="#t1">为您推荐</a>
+                                        <span style="width: 50%; height: 2px;background: #000;
+                                margin-left: 25%;display:block;"></span>
+                                    </li>
+                                    <li>
+                                        <a href="#t2">箱包配饰</a>
+                                        <span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span>
+                                    </li>
+                                    <li>
+                                        <a href="#t3">服饰鞋靴</a>
+                                        <span style="width: 50%; height: 2px;background: #000;
+                                margin-left: 25%;"></span>
+                                    </li>
+                                    <li>
+                                        <a href="#t4">家居家纺</a>
+                                        <span style="width: 50%; height: 2px;background: #000;
+                                margin-left: 25%;"></span>
+                                    </li>
+                                    <li>
+                                        <a href="#t5">运动超市</a>
+                                        <span style="width: 50%; height: 2px;background: #000;
+                                margin-left: 25%;"></span>
+                                    </li>
+                                </ul>
+                                <script>
+                                    $("#my li").each(function () {
+                                        $(this).on("click", function () {
+                                            $("#my li span").css("display", "none");
+                                            $(this).children($("#my li span")).eq(1).css("display", "block");
+                                        })
+                                    })
+                                </script>
+                                <div class="tab-content pull-left">
+                                    <div class="tab-pane active" id="t1">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 1}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t2">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 2}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t3">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 3}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t4">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 4}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t5">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 5}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="text-center pull-left" style="width:100%;margin-top:20px;">
+                                    <span
+                                        style="border:1px solid #ccc;border-radius:10px;padding:2px 15px;background:#ccc;"
+                                        ng-click="tiao()">查看更多商品</span>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab12">
+                                <div style="margin-top:10px;background:#f5f5f5;width:100%;height:30px;line-height:30px;"
+                                    class="pull-left date">
+                                    距结束{{oldDate | date:"HH:mm:ss"}}
+                                </div>
+                                <ul class="nav nav-tabs" id="my">
+                                    <li><a href="#t11">箱包配饰</a><span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span></li>
+                                    <li class="active"><a href="#t12">箱包配饰</a><span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;display:block"></span></li>
+                                    <li><a href="#t13">服饰鞋靴</a><span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span></li>
+                                    <li><a href="#t14">家居家纺</a><span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span></li>
+                                    <li><a href="#t15">零食饮品</a><span style="width: 50%; height: 2px;background: #000;
+                                        margin-left: 25%;"></span></li>
+                                </ul>
+                                <script>
+                                    $("#my li").each(function () {
+                                        $(this).on("click", function () {
+                                            $("#my li span").css("display", "none");
+                                            $(this).children($("#my li span")).eq(1).css("display", "block");
+                                        })
+                                    })
+                                </script>
+                                <div class="tab-content pull-left" style="background: #fff;">
+                                    <div class="tab-pane" id="t11">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 1}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane active" id="t12">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 2}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t13">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 3}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t14">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 4}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="tab-pane" id="t15">
+                                        <ol style="width:209%">
+                                            <li ng-repeat="i in Caryi | filter :{bid : 5}" class="pull-left"
+                                                style="width:100%;" ng-click="details(i)">
+                                                <img ng-src="images/{{i.shopImg}}" style="height: 90px;">
+                                                <p>{{i.shopname}}</p>
+                                                <div class="dou">
+                                                    <span>返200金豆</span>
+                                                    <a>已抢{{i.sold}}</a>
+                                                </div>
+
+                                                <div class="img pull-left">
+                                                    <span class="pull-left">{{i.nowprice|currency}}</span>
+                                                    <img ng-src="images/{{i.Seckill_img}}">
+                                                    <s class="f pull-left"
+                                                        style="line-height: 23px;margin-left:5px">{{i.oldprice}}</s>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="text-center pull-left" style="width:100%;margin-top:20px;">
+                                    <span
+                                        style="border:1px solid #ccc;border-radius:10px;padding:2px 15px;background:#ccc;"
+                                        ng-click="tiao()">查看更多商品</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 预热 -->
+            <div class="tab-pane" id="tab2">
+                <div class="zhe">
+                    <div>
+                        <img src="images/yizhe_02.gif" width="100%">
+                        <a href="#/more"
+                            style="position: absolute;top: 76%;left: 4%;width: 40%; height: 40px;line-height: 40px;"></a>
+                    </div>
+                    <img src="images/ya_03.gif" width="100%" style="padding: 0 4px;">
+                    <div>
+                        <img src="images/bai_03.gif" width="100%">
+                    </div>
+                    <div class="roll">
+                        <ul>
+                            <li>
+                                <p>10元代金券</p>
+                                <img src="images/roll1_03.gif" id="imgyi">
+                            </li>
+                            <li>
+                                <p>20元代金券</p>
+                                <img src="images/roll1_03.gif" id="imger">
+                            </li>
+                            <li>
+                                <p>30元代金券</p>
+                                <img src="images/roll1_03.gif" id="imgsan">
+                            </li>
+                            <li>
+                                <p>40元代金券</p>
+                                <img src="images/roll1_03.gif" id="imgsi">
+                            </li>
+                            <li>
+                                <p>50元代金券</p>
+                                <img src="images/roll1_03.gif" id="imgwu">
+                            </li>
+                            <li>
+                                <p>60元代金券</p>
+                                <img src="images/roll1_03.gif" id="imgliu">
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="images/yuan_02.gif" width="100%">
+                    </div>
+                    <div class="burst">
+                        <ul>
+                            <li ng-repeat="i in Caryi |  filter :{bid : 6}" ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" width="100px" height="100px">
+                                <p>{{i.shopname}}</p>
+                                <p class="text-left"><s>{{i.oldprice}}</s></p>
+                                <div class="img">
+                                    <img ng-src="images/{{i.upimg_ms}}">
+                                    <img ng-src="images/{{i.upimg_sm}}">
+                                    <h4>{{i.nowprice|currency}}</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 限量 -->
+            <div class="tab-pane" id="tab3">
+                <img src="images/XL_02.gif" width="100%" style="margin-top:5px">
+                <div id="XL">
+                    <ol class="aodi">
+                        <li ng-repeat="i in Caryi | filter :{bid:7}" ng-click="details(i)">
+                            <img ng-src="images/{{i.shopImg}}" height="160px">
+                            <span>{{i.shopname}}</span>
+                            <s>{{i.oldprice}}</s>
+                            <div class="weier">
+                                <p>{{i.nowprice|currency}}</p>
+                                <img ng-src="images/{{i.tejia}}">
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <p style="height: 42px;
+                float: left;
+                width: 100%;"></p>
+            </div>
+            <!-- 中小样 -->
+            <div class="tab-pane" id="tab4">
+                <div class="proof">
+                    <div class="yi">
+                        <img src="images/bjbj_03.gif" width="100%">
+                        <div style="white-space: nowrap;
+                    overflow-x: auto;">
+                            <ol>
+                                <li ng-repeat="i in Caryi | filter :{bid:8}" ng-click="details(i)">
+                                    <img ng-src="images/{{i.shopImg}}" alt="">
+                                    <p>{{i.shopname}}</p>
+                                    <div>
+                                        <img ng-src="images/{{i.tejia}}">
+                                        <span style="color:#fa0639;">{{i.oldprice}}</span>
+                                        <span style="font-size:12px;"><s>{{i.nowprice|currency}}</s></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+                    <div class="yi">
+                        <img src="images/bjbj1_03.gif" width="100%">
+                        <div style="white-space: nowrap;
+                        overflow-x: auto;">
+                            <ol>
+                                <li ng-repeat="i in Caryi | filter :{bid:9}" ng-click="details(i)">
+                                    <img ng-src="images/{{i.shopImg}}" alt="">
+                                    <p>{{i.shopname}}</p>
+                                    <div>
+                                        <img ng-src="images/{{i.tejia}}">
+                                        <span style="color:#fa0639;">{{i.oldprice}}</span>
+                                        <span style="font-size:12px;"><s>{{i.nowprice|currency}}</s></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+                    <div class="yi">
+                        <img src="images/bjbj2_03.gif" width="100%">
+                        <div style="white-space: nowrap;
+                    overflow-x: auto;">
+                            <ol>
+                                <li ng-repeat="i in Caryi | filter :{bid:10}" ng-click="details(i)">
+                                    <img ng-src="images/{{i.shopImg}}" alt="">
+                                    <p>{{i.shopname}}</p>
+                                    <div>
+                                        <img ng-src="images/{{i.tejia}}">
+                                        <span style="color:#fa0639;">{{i.oldprice}}</span>
+                                        <span style="font-size:12px;"><s>{{i.nowprice|currency}}</s></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="yi">
+                        <img src="images/bjbj3_03.gif" width="100%">
+                        <div style="white-space: nowrap;
+                        overflow-x: auto;">
+                            <ol>
+                                <li ng-repeat="i in Caryi | filter :{bid:11}" ng-click="details(i)">
+                                    <img ng-src="images/{{i.shopImg}}" alt="">
+                                    <p>{{i.shopname}}</p>
+                                    <div>
+                                        <img ng-src="images/{{i.tejia}}">
+                                        <span style="color:#fa0639;">{{i.oldprice|currency}}</span>
+                                        <span style="font-size:12px;"><s>{{i.nowprice|currency}}</s></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="yi">
+                        <img src="images/bjbj4_03.gif" width="100%">
+                        <div style="white-space: nowrap;
+                        overflow-x: auto;">
+                            <ol>
+                                <li ng-repeat="i in Caryi | filter :{bid:12}" ng-click="details(i)">
+                                    <img ng-src="images/{{i.shopImg}}" alt="">
+                                    <p>{{i.shopname}}</p>
+                                    <div>
+                                        <img ng-src="images/{{i.tejia}}">
+                                        <span style="color:#fa0639;">{{i.oldprice|currency}}</span>
+                                        <span style="font-size:12px;"><s>{{i.nowprice|currency}}</s></span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 新品 -->
+            <div class="tab-pane" id="tab5">
+                <ul class="nav nav-tabs" id="mypin">
+                    <li class="active" style="width:33.3%">
+                        <a href="#pin1" id="hehe">综合</a>
+                        <span style="width: 50%; height: 2px;background: #fd0000;
+                        margin-left: 25%;display:block;"></span>
+                    </li>
+                    <li style="width:33.3%">
+                        <a href="#pin2">销量</a>
+                        <span style="width: 50%; height: 2px;background: #fd0000;
+                        margin-left: 25%;"></span>
+                    </li>
+                    <div style="width:33.3%;height: 42px;
+                    line-height: 42px;
+                    text-align: center;
+                    float:left;
+                    " id="xuan">
+                        <a style="color:#000;text-decoration: none;">筛选</a>
+                    </div>
+                </ul>
+                <script>
+                    $("#mypin li").each(function () {
+                        $(this).on("click", function () {
+                            $("#mypin li span").css("display", "none");
+                            $(this).children($("#mypin li span")).eq(1).css("display", "block");
+                        })
+                    })
+                </script>
+                <div class="tab-content" style="margin-top: 2px;">
+                    <div class="tab-pane active" id="pin1">
+                        <div style="white-space: nowrap;
+                    overflow-x: auto;">
+                            <ul class="nav nav-tabs" id="zonghe" style="width:220%">
+                                <li class="active" style="width: 11.6%">
+                                    <a href="#he1">轻奢</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;display:block;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he2">精品鞋靴</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he3">水果生鲜</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he4">食品零售</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he5">潮流服饰</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he6">家居生活</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he7">美容器具</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he8">箱包配饰</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he9">母婴儿童</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#he10">美容护肤</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                        margin-left: 25%;"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            $("#zonghe li").each(function () {
+                                $(this).on("click", function () {
+                                    $("#zonghe li span").css("display", "none");
+                                    $(this).children($("#zonghe li span")).eq(1).css("display", "block");
+                                })
+                            })
+                        </script>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="he1">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 1}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he2">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 2}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he3">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 3}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he4">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 4}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he5">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 5}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he6">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 6}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he7">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 7}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he8">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 8}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he9">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 9}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="he10">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 10}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="pin2">
+                        <div style="white-space: nowrap;
+                        overflow-x: auto;">
+                            <ul class="nav nav-tabs" id="xiaoliang" style="width:220%">
+                                <li style="width: 11.6%">
+                                    <a href="#liang1">轻奢</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li class="active" style="width:9.5%">
+                                    <a href="#liang2">精品鞋靴</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;display:block;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang3">水果生鲜</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang4">食品零售</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang5">潮流服饰</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang6">家居生活</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang7">美容器具</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang8">箱包配饰</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang9">母婴儿童</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                                <li style="width:9.5%">
+                                    <a href="#liang10">美容护肤</a>
+                                    <span style="width: 50%; height: 2px;background: #000;
+                            margin-left: 25%;"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            $("#xiaoliang li").each(function () {
+                                $(this).on("click", function () {
+                                    $("#xiaoliang li span").css("display", "none");
+                                    $(this).children($("#xiaoliang li span")).eq(1).css("display", "block");
+                                })
+                            })
+                        </script>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="liang1">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 1}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane active" id="liang2">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 2}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang3">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 3}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang4">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 4}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang5">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 5}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang6">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 6}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang7">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 7}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang8">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 8}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang9">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 9}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="liang10">
+                                <img src="images/xinpin_02.gif" width="100%">
+                                <div id="qingshe">
+                                    <ol>
+                                        <li ng-repeat="chi in qingchi | filter : {'seid' : 10}">
+                                            <img ng-src="images/{{chi.allimg}}" width="100%" style="height:172px">
+                                            <em>新品</em>
+                                            <p>{{chi.allname}}</p>
+                                            <span>{{chi.allfan}}</span>
+                                            <div class="v">
+                                                <img ng-src="images/{{chi.allvimg}}" alt="">
+                                                <span style="color:#aa272c">￥{{chi.allprice}}</span>
+                                                <span
+                                                    style="font-size:12px;color:#c3c3c3"><s>￥{{chi.allnoprice}}</s></span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zhezhao" id="zhezhao">
+                    <div class="shaixuan">
+                        <h3 class="text-center">筛选</h3>
+                        <div class="top">
+                            <p class="pull-left">品牌</p>
+                            <div class="pull-left" style="padding-left:20px;" id="pai">
+                                {{xiabiao}}
+                            </div>
+                            <ul class="ul" id="bianli">
+                                <li ng-repeat="sx in shaixuan" data-ng-click="hanshu(sx)">
+                                    <b>{{sx.name}}</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="top">
+                            <p class="pull-left">分类</p>
+                            <div class="pull-left" style="padding-left:20px;" id="flei">
+                                {{shopN}}
+                            </div>
+                            <ul class="ul" id="ulli">
+                                <li ng-repeat="Li in List" data-ng-click="han(Li)">
+                                    <b>{{Li.name}}</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="xia">
+                            <a href="javascript:;" id="queding">确定</a>
+                            <a href="javascript:;" class="chongzhi" ng-click="zhi()">重置</a>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $("#queding").on("click", function () {
+                        $("#zhezhao").fadeOut();
+                    })
+                    $("#xuan").on("click", function () {
+                        $("#zhezhao").fadeIn();
+                    })
+                </script>
+            </div>
+            <!-- 清仓 -->
+            <div class="tab-pane" id="tab6">
+                <img src="images/overflow_02.gif" width="100%">
+                <div class="bj">
+                    <div style="white-space: nowrap; overflow-x: auto;">
+                        <ol class="mai">
+                            <li ng-repeat="i in Caryi |filter :{bid :14}" ng-click="details(i)">
+                                <img ng-src="images/{{i.shopImg}}" alt="">
+                                <p style="overflow: hidden;">{{i.shopname}}</p>
+                                <div class="tehui">
+                                    <span>特惠</span>
+                                    <span style="color:#de0717;">{{i.nowprice|currency}}</span>
+                                    <span style="color:#ccc;"><s>{{i.oldprice|currency}}</s></span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+                <img src="images/bj111_02.gif" class="pull-left" width="100%">
+                <div class="jb">
+                    <ol class="man">
+                        <li ng-repeat="h in overeid">
+                            <img ng-src="images/{{h.vImg}}" alt="">
+                            <p>{{h.vName}}</p>
+                            <div class="qingcang">
+                                <span>清仓</span>
+                                <span style="color:#de0717;">{{h.Vprice}}</span>
+                                <span style="color:#ccc;"><s>{{h.vNoprice}}</s></span>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $("#myTabs a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+
+            $(function () {
+                $("#myTabs1 a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+            $(function () {
+                $("#my a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+            $(function () {
+                $("#mypin a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+            $(function () {
+                $("#zonghe a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+            $(function () {
+                $("#xiaoliang a").on("click", function (event) {
+                    var ev = event || window.event;
+                    ev.preventDefault();
+                    $(this).tab("show");
+                })
+            })
+            $("div.span1").on("click", function () {
+                $(".divdiv").css("display", "none");
+                $(".vidvid").css("display", "block");
+            })
+            $("div.span2").on("click", function () {
+                $(".divdiv").css("display", "block");
+                $(".vidvid").css("display", "none");
+            })
+        </script>
+    </div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>
+<script src="js/tappay.js"></script>

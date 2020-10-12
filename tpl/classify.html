@@ -1,0 +1,43 @@
+<style>
+    .nav-tabs {
+        border: none !important;
+    }
+
+    .nav-tabs>li.active>a {
+        border: none !important;
+    }
+</style>
+<div id="fenlei">
+    <div class="fen pull-left">
+        <span class="glyphicon glyphicon-chevron-left" ng-click="fen()"></span>
+        <h4>海豚家</h4>
+    </div>
+    <div class="form-group has-feedback pull-left input">
+        <input type="text" class="form-control" placeholder="搜索商品名称" ng-click="lei()">
+        <span class="form-control-feedback glyphicon glyphicon-search"></span>
+    </div>
+    <div class="pull-left tuijian">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li ng-repeat="i in data" ng-class="{'background:#fff':num == $index}" ng-click="fenl(i)">
+                <a>{{i.name}}</a>
+            </li>
+        </ul>
+        <div class="tab-content you">
+            <div class="tab-pane active" id="tab1">
+                <div ng-repeat="j in shopList" style="width:28%;margin-left:5%;margin-top:5px" class="pull-left">
+                    <img ng-src="images/{{j.img}}" style="width:69px;height:66.5px;">
+                    <p style="margin:0;line-height:20px;width:100%;overflow: hidden;height:20px" class="text-center">{{j.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#myTabs a").on("click", function (event) {
+            var ev = event || window.event;
+            ev.preventDefault();
+            $(this).tab("show");
+        })
+    })
+</script>

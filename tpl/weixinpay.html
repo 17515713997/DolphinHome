@@ -1,0 +1,143 @@
+<!-- 头部信息 -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="javascript:history.back(-1)" class="navbar-brand">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <ul class="pull-right" style="margin-top: 15px">
+        <li style="float: left;margin-right: 10px">
+          <a href="" class="" ng-if="UN">
+            <p style="float: left"><mark>{{"欢迎"+wxName+"登录海豚家"}}</mark></p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<h4 class="text-center" style="padding-top:60px">{{wxOrder.shopname}}</h4>
+<h2 class="text-center">{{wxOrder.oldprice*1|currency:'￥'}}</h2>
+<ul style="background-color: #fff;height:40px;line-height: 40px">
+  <li style="padding:0 10px 0 10px" class="col-xs-12">收款方<p class="pull-right">海豚家</p>
+  </li>
+</ul>
+
+<button type="button" class="btn btn-block btn-success" id="fukuan" data-toggle="modal"
+  data-target="#mymodals">立即支付</button>
+
+
+
+<div class="modal fade col-xs-12" id="mymodals" tabindex="-1" role="dialog" style="top: 30%">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="wxonPay()"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">选择支付方式</h4>
+
+      </div>
+      <div class="modal-body col-xs-12">
+        <ul>
+          <li class="text-center" style="float: none">海豚家</li>
+          <li style="float: none">
+            <h2 class="text-center">{{wxOrder.oldprice*1|currency:'￥'}}</h2>
+          </li>
+          <li style="float: none">付款方式<p class="pull-right" data-toggle="modal" data-target="#mymodal"><img src="images/money.jpg" alt=""
+                style="width:15px;margin:-2px 3px 0 0 ">亲属卡(爱的魔力转圈圈)</p>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <!--data-toggle="modal" data-target="#mymodal1"-->
+        <button type="button" class="btn btn-success btn-block" ng-click="zwpay()"  data-dismiss="modal">确认支付</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade col-xs-12" id="mymodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" style="top: 31%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="wxonPay()"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">选择支付方式</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="images/money.jpg" alt="" style="width:15px;margin:-2px 3px 0 0 ">亲属卡(爱的魔力转圈圈)<input type="radio"
+            value="mon" class="pull-right" name="mon" data-toggle="modal" data-target="#mymodal1"></p>
+        <p><img src="images/money2.jpg" alt="" style="width:15px;margin:-2px 3px 0 0 ">零钱(剩余￥12345.111)<input
+            type="radio" value="mon" class="pull-right" name="mon" data-toggle="modal" data-target="#mymodal1"></p>
+        <p><img src="images/money3.jpg" alt="" style="width:15px;margin:-2px 3px 0 0 ">工商银行储蓄卡(1111)<input type="radio"
+            value="mon" class="pull-right" name="mon" data-toggle="modal" data-target="#mymodal1"></p>
+      </div>
+      <div class="modal-footer">
+        您没有多余卡了呦！自己穷啥样不清楚嘛&hellip;
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade  mymodalmoney" id="mymodal1" tabindex="-1" role="dialog" style="top: 31%">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="wxonPay()"><span
+              aria-hidden="true">&times;</span></button>
+          <p class="pull-left">请输入支付密码</p>
+        </div>
+      </div>
+      <div class="modal-body col-xs-12">
+        <ul>
+          <li class="text-center">河北哪家斯托有限公司</li>
+          <li>
+            <h2 class="text-center">{{wxOrder.oldprice|currency:'￥'}}</h2>
+          </li>
+          <li>付款方式<p class="pull-right" data-toggle="modal" data-target="#mymodal" ><img src="images/money.jpg" alt=""
+                style="width:15px;margin:-2px 3px 0 0 ">亲属卡(爱的魔力转圈圈)</p>
+          </li>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <ul class="mm_box">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="numb_box">
+    <div class="xiaq_tb">
+      <span class="glyphicon glyphicon-chevron-down" style="margin-left:49%"></span>
+    </div>
+    <ul class="nub_ggg">
+      <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+      <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+      <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+      <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+      <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+      <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+      <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+      <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+      <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+      <li><a href="javascript:void(0);" class="zf_empty">清空</a></li>
+      <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+      <li><a href="javascript:void(0);" class="zf_del">删除</a></li>
+    </ul>
+  </div>
+</div>
+<div ng-include=" 'tpl/footer.html' "></div>

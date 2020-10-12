@@ -1,0 +1,156 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript:history.back(-1)" class="navbar-brand">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="javascript:history.back(-1)" class="navbar-brand">
+                <p>100%正品 假一赔十</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div style="padding:60px 0 0 0;">
+    <img src="images/{{getshopname.shopImg}}" alt="" class="img-responsive col-xs-12" style="padding: 0">
+    <div style="float: left;width: 100%;background:#f2f2f2;">
+        <div style="padding: 20px 20px 10px 20px">
+            <div class="row">
+                <h3 class="pull-left">{{getshopname.oldprice | currency:'￥'}}
+                    <s style="color: grey;font-size:12px;margin-left:5px">{{getshopname.nowprice | currency:'￥'}}</s>
+                </h3>
+                <img src="images/vip.png" alt="" class="img-responsive" style="width:20px;margin-top:32px">
+                <p class="pull-right">已售<span>{{getshopname.sold}}+</span>件</p>
+            </div>
+
+
+            <div class="row">
+                <ul>
+                    <li class="col-xs-8">
+                        <h4 class="pull-left">{{getshopname.shopname}}</h4>
+                    </li>
+                    <li class="col-xs-2" style="cursor: pointer;">
+                        <span class="glyphicon glyphicon-share" style="margin-left: 5px"></span><br>
+                        分享
+                    </li>
+                    <li class="col-xs-2" style="cursor: pointer;">
+                        <span class="glyphicon glyphicon-heart-empty" style="margin-left: 5px"></span><br>
+                        收藏
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div
+            style="height:80px;background:#292520;color:#f1ebdc;line-height: 80px;width: 100%;float: left;border-radius:10px">
+            <p style="padding-left: 20px" class="pull-left">现开通会员,立省25元</p>
+
+            <button type="button" class="btn btn-dafault pull-right"
+                style="background: #f6ecbb;margin:20px;color:#000">立即开通</button>
+        </div>
+
+        <div>
+            <ul>
+                <li class="pull-left col-xs-3" style="padding:20px 0 20px 20px;">•海外直采</li>
+                <li class="pull-left col-xs-3" style="padding:20px 0">•24H发货</li>
+                <li class="pull-left col-xs-3" style="padding:20px 0">•超值低价</li>
+                <li class="pull-left col-xs-3" style="padding:20px 0">•7天退换</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div style="background: #f2f2f2;margin: 20px 0;float: left;width: 100%;padding: 10px">
+    <h4 class="col-xs-3">保障</h4>
+    <p class="col-xs-9">18:00钱付款，预计{{orderMonth}}月{{serviceTime}}日({{serviceTime|date:"EEEE"}})送达 晚到必赔•假一赔十•上门取件•极速退款
+    </p>
+</div>
+
+<div style="background: #f2f2f2;float: left;width: 100%;padding: 10px">
+    <img src="images/{{getshopname.brandImg}}" alt="" class="pull-left col-xs-2">
+    <h4 class="col-xs-7">{{getshopname.brand}}</h4>
+    <button type="button" class="btn  pull-right" style="background: #c7c6be">进入品牌</button>
+</div>
+
+
+<div style="background: #f2f2f2;margin: 20px 0;float: left;width: 100%;padding: 10px">
+    <h4>热销推荐</h4>
+    <p class="col-xs-12">{{getshopname.shopDetails}}</p>
+</div>
+
+<div>
+    <h3>商品详情</h3>
+    <ul>
+        <li ng-repeat="k in shopDeimg">
+            <img src="images/{{k}}" alt="" class="img-responsive">
+        </li>
+    </ul>
+</div>
+
+
+<div class="aaa"
+    style="width: 100%; height: 100%; position: fixed; z-index: 8; background:rgba(0, 0, 0, 0.5);top: 0; left: 0; display: none">
+    <div id="shopmodel" style="background:#fff;width:100%;position:fixed;bottom:0;left:0;display:none;z-index: 10000">
+        <div class="media" style="border-bottom: 1px solid grey">
+            <div class="media-left col-xs-3">
+                <img src="images/{{getshopname.shopImg}}" alt="" class="img-responsive">
+            </div>
+            <div class="media-right col-xs-9">
+                <h4 class="pull-left ">{{getshopname.shopname}}</h4>
+                <h3 class="pull-left">{{getshopname.oldprice | currency:'￥'}}
+                    <s style="color: grey;font-size:12px;margin-left:5px">{{getshopname.nowprice | currency:'￥'}}</s>
+                </h3>
+                <img src="images/vip.png" alt="" class="img-responsive" style="width:20px;margin-top:72px">
+            </div>
+        </div>
+
+        <h4>商品型号</h4>
+        <ul class="pull-left">
+            <li ng-repeat="m in shopModel"
+                style="width: 30%;height: 30px;background: #f2f2f2;border-radius: 10px;text-align: center;line-height: 30px;margin-right: 2%"
+                ng-click="storemodel(e)">{{m}}
+            </li>
+            <li class="pull-left" style="margin-top: 20px">
+                <input type="number" value="" ng-model="num" >{{num}}
+            </li>
+        </ul>
+        <button type="button" class="btn btn-success btn-block" style="margin-top: 50px;padding-bottom:60px" ng-click="success()">确认</button>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="navbar navbar-default navbar-fixed-bottom footer visible-xs" style="min-height: 50px;background: #fff">
+        <div class="container text-center">
+            <ul class="row nav nav-tabs nav-tabs-justified" style="margin-bottom:-20px;">
+                <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0"
+                    ng-click="jump('/a')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    首页
+                </li>
+                <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0" ng-click="jump('/cs')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    客服
+                </li>
+                <li class="col-xs-2 btn-default" style="cursor: pointer;font-size:12px;padding: 10px 0"
+                    ng-click="jump('/sc')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    购物车
+                </li>
+                <li class="col-xs-3" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                    <button type="button" class="btn" style="background: #faeb56;color: #413e39"
+                        ng-click="joincar()">加入购物车</button>
+                </li>
+                <li class="col-xs-3" style="cursor: pointer;font-size:12px;padding: 10px 0">
+                    <button type="button" class="btn" style="background: #413e39;color: #faeb56"
+                        ng-click="nowBuy()">立即购买</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/s" class="navbar-brand">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="javascript:;" class="navbar-brand text-center">海豚家社区</a>
+            <a href="javascript:;" class="navbar-brand pull-right">
+                <span class="glyphicon glyphicon-off"></span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="wbnav" style="padding:60px 0">
+    <div class="category">
+        <ul>
+            <li class="active">关注</li>
+            <li>推荐</li>
+            <li>视频</li>
+            <li>小红书爆款</li>
+            <li>发现</li>
+        </ul>
+    </div>
+    <div class="cont active">
+        <ul>
+            <li style="width: 100%;background:#f2f2f2;margin-bottom: 20px" ng-repeat="k in getwangmsg">
+                <a href="#/wd:{{k.bid}}">
+                    <div class="row">
+                        <img src="images/{{k.headImg}}" alt="" class="col-xs-2">
+                        <h5 class="col-xs-3">{{k.name}}</h5>
+                        <h5 class="col-xs-4 text-right">{{k.orderTime|date:'yyyy-MM-dd'}}</h5>
+                    </div>
+                    <h5 style="margin-left: 15px;color:#000;">{{k.comment}}</h5>
+                    <div class="saihong">
+                        <div style="background: url(images/{{k.de_smimg}}) center center;height: 300px;"></div>
+
+                    </div>
+                    <div class="row">
+                        <h5 class="col-xs-12">
+                            #我的海豚购物车
+                            <a class="pull-right col-xs-2">评论</a>
+                            <a class="pull-right col-xs-2">点赞</a>
+                        </h5>
+                    </div>
+
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+    <div class="cont" style="background:none;">
+        <ul style="height:100px">
+            <li ng-repeat="i in Caryi | filter : {bid:7}" ng-click="details(i)"
+                style="width:50%;text-align: center;margin-top:15px;">
+                <img ng-src="images/{{i.shopImg}}" width="95px" height="81px">
+                <p style="width:100%;overflow: hidden;height:20px;line-height:20px">{{i.shopname}}</p>
+                <s class="pull-left" style="padding-left:26%">{{i.oldprice|currency}}</s>
+                <div class="v pull-left">
+                    <em>{{i.nowprice|currency}}</em>
+                </div>
+            </li>
+            <ul>
+    </div>
+
+    <div class="cont">
+        <div>
+            <video width="100%" height="100%" class="bottom" id="video" autoplay="autoplay" muted controls
+                preload="auto" autoplay="autoplay" data-setup="{'autoplay':true}">
+                <source src="video/zhibo1.mp4" type="video/mp4">
+            </video>
+            <video width="100%" height="100%" class="bottom" id="video" autoplay="autoplay" muted controls
+                preload="auto" autoplay="autoplay" data-setup="{'autoplay':true}">
+                <source src="video/zhibo2.mp4" type="video/mp4">
+            </video>
+            <video width="100%" height="100%" class="bottom" id="video" autoplay="autoplay" muted controls
+                preload="auto" autoplay="autoplay" data-setup="{'autoplay':true}">
+                <source src="video/zhibo3.mp4" type="video/mp4">
+            </video>
+            <video width="100%" height="100%" class="bottom" id="video" autoplay="autoplay" muted controls
+                preload="auto" autoplay="autoplay" data-setup="{'autoplay':true}">
+                <source src="video/zhibo4.mp4" type="video/mp4">
+            </video>
+             <video width="100%" height="100%" class="bottom" id="video" autoplay="autoplay" muted controls
+                        preload="auto" autoplay="autoplay" data-setup="{'autoplay':true}">
+                        <source src="video/zhibo5.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="cont" style="background:#fb5899;float:left">
+            <ul>
+                <li ng-repeat="i in Caryi | filter : {bid:6}" ng-click="details(i)" style="width:50%;text-align: center;">
+                    <img ng-src="images/{{i.shopImg}}" width="100%" height="80%">
+                    <p style="width:100%;overflow: hidden;height:20px;line-height:20px">{{i.shopname}}</p>
+                    <s class="pull-left" style="padding-left:21%">{{i.oldprice|currency}}</s>
+                    <div class="v pull-left">
+                        <em>{{i.nowprice|currency}}</em>
+                    </div>
+                </li>
+            <ul>
+        </div>
+        <div class="cont">
+            <ul>
+                <li ng-repeat="i in Caryi | filter : {bid:9}" ng-click="details(i)" style="width:100%;text-align: center;">
+                    <img ng-src="images/{{i.shopImg}}" width="30%" height="30%" class="pull-left">
+                    <p style="width:70%;overflow: hidden;height:20px;line-height:20px;float:left;margin-top:16px;text-align: left;">{{i.shopname}}</p>
+                    <p class="pull-left" style="width:70%;text-align: left">{{i.shopDetails}}</p>
+                    <div class="v pull-left">
+                        <em>{{i.nowprice|currency}}</em>
+                    </div>
+                </li>
+            <ul>
+        </div>
+    
+</div>
+
+<div ng-include=" 'tpl/footer.html' "></div>

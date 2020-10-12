@@ -1,0 +1,106 @@
+<!-- <div class="row">
+    <div class="navbar navbar-default navbar-fixed-bottom footer visible-xs" style="margin-top:100px;">
+        <div class="container text-center">
+            <ul class="row nav nav-tabs nav-tabs-justified" style="line-height:30px;margin-bottom:-20px;">
+                <li class="col-xs-2 btn-default" style="cursor: pointer;" ng-click="jump('/m')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    首页
+                </li>
+                <li class="col-xs-2 btn-default" style="cursor: pointer;" ng-click="jump('/wb')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    种草
+                </li>
+                <li class="col-xs-3 btn-default" style="cursor: pointer;" ng-click="jump('/vip')">
+                    <span class="glyphicon glyphicon-home"></span><br>
+                    会员中心
+                </li> 
+                <li class="col-xs-3 btn-default" style="cursor: pointer;" ng-click="jump('/sc')">
+                    <span style="width: 20px;height: 20px;background: red;border-radius: 50%;display: block;position: absolute;right: 28px;line-height: 20px;color: #fff">{{shoplength}}</span>
+                    <span class="glyphicon glyphicon-save"></span><br>
+                    购物车
+                </li>
+                <li class="col-xs-2 btn-default" style="cursor: pointer;" ng-click="jump('/per')">
+                    <span class="glyphicon glyphicon-user"></span><br>
+                    我的
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+
+<style>
+        .col-xs-2{
+            width: 20% !important;
+        }
+        .footer{
+            width:100%;
+            position:fixed;
+            left:0;
+            bottom:0;
+        }
+        .footer div ul{
+            height:50px;
+        }
+        .footer div ul li{
+            padding:0 !important;
+            height:50px;
+        }
+        .footer div ul li a{
+            height:50px;
+            padding:0;
+        }
+        .navbar{
+            margin:0;
+        }
+        #img{
+            width:40px;
+            height:40px;
+            position:absolute;
+            left:25%;
+            top:-23%;
+            display: block;
+        }
+    </style>
+    <footer class="navbar navbar-default  footer">
+        <div class="conrainer text-center">
+            <ul class="row nav nav-tabs nav-tabs-justified">
+                <li class="col-xs-2 btn-default" >
+                    <a href="#/m"  style="color:#000;" id="aa1">
+                        <img src="images/shouye_03.gif" width="20px" height="20px" style="margin:7px 0 0 5px">
+                        <br>
+                        <span style="margin-left:5px;font-size:12px;">首页</span>
+                    </a>
+                </li>
+                <li class="col-xs-2 btn-default">
+                    <a href="#/wb"  style="color:#000;">
+                        <img src="images/zhongcao_03.gif" width="20px" height="20px" style="margin:7px 0 0 0">
+                        <br>
+                        <span style="font-size:12px;">种草</span>
+                    </a>
+                </li>
+                <li class="col-xs-2 btn-default">
+                    <a href="#/vip"  style="color:#000;">
+                        <img src="images/huiyuanzhongxin_0.gif" id="img">
+                        <br>
+                        <span style="font-size:12px;margin-top:9px;display: block;">会员中心</span>
+                    </a>
+                </li>
+                <li class="col-xs-2 btn-default">
+                    <a href="#/sc"  style="color:#000;">
+                        <img src="images/gouwuche_06.gif" width="20px" height="20px" style="margin:7px 0 0 0">
+                        <br>
+                        <span style="font-size:12px;">购物车</span>
+                        <span style="width: 20px;height: 20px;background: red;border-radius: 50%;display: block;position: absolute;right: 20px;top:-5px;line-height: 20px;color: #fff">{{shoplength}}</span>
+                    </a>
+                </li>
+                <li class="col-xs-2 btn-default">
+                    <a href="#/per" style="color:#000;">
+                        <img src="images/wode_03.gif" width="20px" height="20px" style="margin:7px 0 0 0">
+                        <br>
+                        <span style="font-size:12px;">我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    

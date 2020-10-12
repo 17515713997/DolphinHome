@@ -1,0 +1,988 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#top {
+  margin-bottom: 100px;
+}
+#top .top_input {
+  width: 100%;
+  background: #fddf01;
+  height: 70px;
+}
+#top .top_input div.left {
+  float: left;
+  margin-top: 15px;
+  width: 10%;
+  text-align: center;
+}
+#top .top_input div.right {
+  float: right;
+  margin-top: 15px;
+  width: 10%;
+  text-align: center;
+}
+#top .top_input div.right span {
+  display: block;
+  width: 100%;
+}
+#top .top_input div.center {
+  width: 80%;
+  float: left;
+  margin-top: 16px;
+}
+#top .top_input div.center input {
+  width: 90%;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  height: 34px;
+  outline: none;
+  text-align: center;
+  margin-left: 16px;
+}
+#top div.div ul {
+  background: #fff;
+}
+#top div.div ul li {
+  width: 16.6%;
+}
+#top div.div ul li a {
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+  color: #2c2c2c;
+}
+#top div.div ul li span {
+  display: block;
+  width: 50%;
+  height: 2px;
+  background: #000;
+  margin-left: 25%;
+  display: none;
+}
+#tab1 {
+  margin-top: 5px;
+}
+#tab1 img {
+  width: 100%;
+}
+#tab1 ol.ol {
+  margin-top: 10px;
+  padding: 0 10px;
+  height: 20px;
+}
+#tab1 ol.ol li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+#tab1 ol.ol li img {
+  width: 15px !important;
+  float: left;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+#tab1 .divdiv {
+  margin-top: 20px;
+}
+#tab1 .divdiv div {
+  width: 20%;
+  float: left;
+  text-align: center;
+  height: 80px;
+}
+#tab1 .divdiv div img {
+  width: 55%;
+}
+#tab1 .divdiv div span {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+#tab1 .vidvid {
+  margin-top: 20px;
+  display: none;
+}
+#tab1 .vidvid div {
+  width: 20%;
+  float: left;
+  text-align: center;
+  height: 80px;
+}
+#tab1 .vidvid div img {
+  width: 35px;
+}
+#tab1 .vidvid div span {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+#tab1 div.span1 {
+  width: 50%;
+  float: left;
+}
+#tab1 div.span1 p {
+  border-radius: 20px;
+  background: #c7c7c7;
+  width: 50px;
+  height: 5px;
+  margin-left: 68%;
+}
+#tab1 div.span2 {
+  width: 50%;
+  float: left;
+}
+#tab1 div.span2 p {
+  border-radius: 20px;
+  background: #c7c7c7;
+  width: 50px;
+  height: 5px;
+}
+#tab1 div.img {
+  float: left;
+  padding: 0 10px;
+}
+#tab1 div.ka {
+  margin-top: 10px;
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+}
+#tab1 div.ka .nian {
+  background-image: -webkit-linear-gradient(left, #ffd780, #f1ab3b, #ffd48f);
+  background-image: -o-linear-gradient(left, #ffd780, #ffd48f);
+  background-image: linear-gradient(left, #ffd780, #ffd48f);
+  height: 35px;
+}
+#tab1 div.ka .nian div.top {
+  margin-top: 10px;
+}
+#tab1 div.ka .nian div.top img {
+  width: 25px;
+  float: left;
+  margin-top: 2%;
+}
+#tab1 div.ka .nian div.top p {
+  float: left;
+  margin: 0;
+  font-size: 16px;
+  margin-left: 10px;
+  color: #872502;
+  margin-top: 2%;
+}
+#tab1 div.ka .nian div.bottom {
+  margin-top: 2%;
+  border-radius: 10px;
+  background: #fff;
+  width: 40%;
+  text-align: center;
+  margin-right: 4%;
+}
+#tab1 div.ka .nian div.bottom a {
+  font-size: 14px;
+  color: #3b393a;
+}
+#tab1 div.bottom_m {
+  background-image: -webkit-linear-gradient(left, #ffd780, #f1ab3b, #ffd48f);
+  background-image: -o-linear-gradient(left, #ffd780, #ffd48f);
+  background-image: linear-gradient(left, #ffd780, #ffd48f);
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+}
+#tab1 div.bottom_m .goudan {
+  width: 500px;
+}
+#tab1 div.bottom_m .goudan li {
+  background: #fff;
+  float: left;
+  text-align: center;
+  width: 19%;
+  height: 150px;
+  margin-left: 5px;
+  border-radius: 8px;
+}
+#tab1 div.bottom_m .goudan li p {
+  height: 20px;
+  overflow: hidden;
+  float: left;
+  margin: 0;
+}
+#tab1 div.bottom_m .goudan li s {
+  float: left;
+  color: #3b393a;
+  margin-left: 5px;
+}
+#tab1 div.bottom_m .goudan li div.v {
+  float: left;
+  margin-top: 5px;
+  clear: both;
+  margin-left: 5px;
+}
+#tab1 div.bottom_m .goudan li div.v img {
+  float: left;
+  width: 15px;
+}
+#tab1 div.bottom_m .goudan li div.v p {
+  margin-top: -8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#tab1 div.bottom_m .goudan li div.v p em {
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+}
+#tab1 .sha {
+  width: 100%;
+}
+#tab1 .sha img {
+  width: 80px;
+  margin-top: 10px;
+  float: left;
+}
+#tab1 .sha .nav {
+  float: left;
+  width: 76%;
+}
+#tab1 .sha .nav li {
+  width: 50%;
+  float: left;
+}
+#tab1 .sha .nav li a {
+  font-weight: bold;
+}
+#my {
+  width: 100% !important;
+  margin-top: 10px;
+}
+#my li {
+  width: 20% !important;
+  float: left;
+}
+#t1 ol li img,
+#t2 ol li img,
+#t3 ol li img,
+#t4 ol li img,
+#t5 ol li img {
+  width: 90px !important;
+  margin-right: 30px !important;
+  margin-top: 0 !important;
+  margin-left: 10px;
+}
+#t1 ol li p,
+#t2 ol li p,
+#t3 ol li p,
+#t4 ol li p,
+#t5 ol li p {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  padding-top: 10px;
+}
+#t1 ol li .dou,
+#t2 ol li .dou,
+#t3 ol li .dou,
+#t4 ol li .dou,
+#t5 ol li .dou {
+  margin-top: 5px;
+}
+#t1 ol li .dou span,
+#t2 ol li .dou span,
+#t3 ol li .dou span,
+#t4 ol li .dou span,
+#t5 ol li .dou span {
+  border: 1px solid #f4e4e4;
+  color: #cd7583;
+  font-size: 12px;
+}
+#t1 ol li .dou a,
+#t2 ol li .dou a,
+#t3 ol li .dou a,
+#t4 ol li .dou a,
+#t5 ol li .dou a {
+  color: #9d9d9d;
+  font-size: 12px;
+  margin-left: 5%;
+}
+#t1 ol li s.f,
+#t2 ol li s.f,
+#t3 ol li s.f,
+#t4 ol li s.f,
+#t5 ol li s.f {
+  color: #ababab;
+  font-size: 12px;
+  margin-top: 0.5%;
+}
+#t1 ol li div.img,
+#t2 ol li div.img,
+#t3 ol li div.img,
+#t4 ol li div.img,
+#t5 ol li div.img {
+  padding: 0 !important;
+  float: left;
+}
+#t1 ol li div.img img,
+#t2 ol li div.img img,
+#t3 ol li div.img img,
+#t4 ol li div.img img,
+#t5 ol li div.img img {
+  width: 40px !important;
+  float: none !important;
+}
+#t1 ol li div.img span,
+#t2 ol li div.img span,
+#t3 ol li div.img span,
+#t4 ol li div.img span,
+#t5 ol li div.img span {
+  font-size: 16px;
+}
+#t11 ol li img,
+#t12 ol li img,
+#t13 ol li img,
+#t14 ol li img,
+#t15 ol li img {
+  width: 90px !important;
+  margin-right: 30px !important;
+  margin-top: 0 !important;
+  margin-left: 10px;
+}
+#t11 ol li p,
+#t12 ol li p,
+#t13 ol li p,
+#t14 ol li p,
+#t15 ol li p {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+}
+#t11 ol li .dou,
+#t12 ol li .dou,
+#t13 ol li .dou,
+#t14 ol li .dou,
+#t15 ol li .dou {
+  height: 20px;
+}
+#t11 ol li .dou span,
+#t12 ol li .dou span,
+#t13 ol li .dou span,
+#t14 ol li .dou span,
+#t15 ol li .dou span {
+  border: 1px solid #f4e4e4;
+  color: #cd7583;
+  font-size: 12px;
+}
+#t11 ol li .dou a,
+#t12 ol li .dou a,
+#t13 ol li .dou a,
+#t14 ol li .dou a,
+#t15 ol li .dou a {
+  color: #9d9d9d;
+  font-size: 12px;
+  margin-left: 5%;
+}
+#t11 ol li s.f,
+#t12 ol li s.f,
+#t13 ol li s.f,
+#t14 ol li s.f,
+#t15 ol li s.f {
+  color: #ababab;
+  font-size: 12px;
+  margin-top: 0.5%;
+  width: 80%;
+  height: 20px;
+}
+#t11 ol li div.img,
+#t12 ol li div.img,
+#t13 ol li div.img,
+#t14 ol li div.img,
+#t15 ol li div.img {
+  width: 80%;
+  padding: 0 !important;
+}
+#t11 ol li div.img img,
+#t12 ol li div.img img,
+#t13 ol li div.img img,
+#t14 ol li div.img img,
+#t15 ol li div.img img {
+  width: 40px !important;
+  float: none !important;
+}
+#t11 ol li div.img span,
+#t12 ol li div.img span,
+#t13 ol li div.img span,
+#t14 ol li div.img span,
+#t15 ol li div.img span {
+  font-size: 16px;
+}
+#more .more_m {
+  margin-top: 15px;
+  height: 35px;
+}
+#more .more_m a {
+  float: left;
+  width: 10%;
+}
+#more .more_m h4 {
+  float: left;
+  width: 80%;
+  margin: 0;
+  text-align: center;
+}
+#more .more_m span {
+  float: right;
+  width: 10%;
+}
+#tt1 ol li,
+#tt2 ol li,
+#tt3 ol li,
+#tt4 ol li,
+#tt5 ol li {
+  margin-top: 20px;
+}
+#tt1 ol li img,
+#tt2 ol li img,
+#tt3 ol li img,
+#tt4 ol li img,
+#tt5 ol li img {
+  float: left !important;
+  width: 90px !important;
+  margin-right: 30px !important;
+  margin-top: 0 !important;
+  margin-left: 10px;
+}
+#tt1 ol li p,
+#tt2 ol li p,
+#tt3 ol li p,
+#tt4 ol li p,
+#tt5 ol li p {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+}
+#tt1 ol li .dou,
+#tt2 ol li .dou,
+#tt3 ol li .dou,
+#tt4 ol li .dou,
+#tt5 ol li .dou {
+  height: 20px;
+  width: 80%;
+}
+#tt1 ol li .dou span,
+#tt2 ol li .dou span,
+#tt3 ol li .dou span,
+#tt4 ol li .dou span,
+#tt5 ol li .dou span {
+  border: 1px solid #f4e4e4;
+  color: #cd7583;
+  font-size: 12px;
+}
+#tt1 ol li .dou a,
+#tt2 ol li .dou a,
+#tt3 ol li .dou a,
+#tt4 ol li .dou a,
+#tt5 ol li .dou a {
+  color: #9d9d9d;
+  font-size: 12px;
+  margin-left: 5%;
+}
+#tt1 ol li s.f,
+#tt2 ol li s.f,
+#tt3 ol li s.f,
+#tt4 ol li s.f,
+#tt5 ol li s.f {
+  color: #ababab;
+  font-size: 12px;
+  margin-top: 0.5%;
+  width: 100%;
+  height: 20px;
+}
+#tt1 ol li div.img,
+#tt2 ol li div.img,
+#tt3 ol li div.img,
+#tt4 ol li div.img,
+#tt5 ol li div.img {
+  width: 100%;
+  padding: 0 !important;
+}
+#tt1 ol li div.img img,
+#tt2 ol li div.img img,
+#tt3 ol li div.img img,
+#tt4 ol li div.img img,
+#tt5 ol li div.img img {
+  width: 40px !important;
+  float: none !important;
+}
+#tt1 ol li div.img span,
+#tt2 ol li div.img span,
+#tt3 ol li div.img span,
+#tt4 ol li div.img span,
+#tt5 ol li div.img span {
+  font-size: 16px;
+}
+#XL {
+  width: 100%;
+  background: #eec082;
+  float: left;
+}
+#XL .aodi li {
+  width: 45%;
+  float: left;
+  background: #fff;
+  margin-left: 3%;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#XL .aodi li img {
+  width: 160px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+}
+#XL .aodi li span {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 10px;
+  overflow: hidden;
+}
+#XL .aodi li s {
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 12px;
+}
+#XL .aodi li div.weier p {
+  text-align: left;
+  padding-left: 6px;
+  font-size: 16px;
+  color: red;
+  float: left;
+}
+#XL .aodi li div.weier img {
+  margin-left: 5px;
+  width: 35px;
+  float: left;
+}
+#kw .kw_m {
+  width: 85%;
+  margin: 0;
+}
+#kw .kw_m input {
+  border-radius: 15px;
+  height: 30px;
+  background: #eeeeee;
+}
+#kw .kw_w {
+  width: 10%;
+  float: right;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  color: #000;
+  margin-top: -27px;
+}
+#hot h4 {
+  margin-bottom: 0 !important;
+}
+#hot .hot {
+  float: left;
+  margin-top: 15px;
+}
+#hot .hot span {
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  border-radius: 15px;
+  padding: 2px 15px;
+}
+#use {
+  margin-top: 20px;
+}
+#use h4 {
+  margin-bottom: 0 !important;
+}
+#use .use {
+  float: left;
+  margin-top: 15px;
+}
+#use .use span {
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  border-radius: 15px;
+  padding: 2px 15px;
+}
+#tab6 {
+  float: left;
+  background: #ff9e83;
+  margin-top: 5px;
+}
+#tab6 .bj {
+  overflow: hidden;
+}
+#tab6 .bj ol.mai {
+  width: 150%;
+  margin-top: 10px;
+  float: left;
+}
+#tab6 .bj ol.mai li {
+  float: left;
+  width: 19%;
+  height: 180px;
+  background: #fff;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+#tab6 .bj ol.mai li img {
+  width: 102px;
+  border-radius: 5px;
+  height: 98px;
+}
+#tab6 .bj ol.mai li p {
+  width: 100%;
+  float: left;
+  padding-left: 5px;
+  font-size: 12px;
+  height: 20px;
+  color: #000;
+}
+#tab6 .bj ol.mai li .tehui {
+  width: 100%;
+  margin-top: 15px;
+  float: left;
+  padding: 0 5px;
+}
+#tab6 .bj ol.mai li .tehui span {
+  width: 30px;
+  display: block;
+  float: left;
+  text-align: center;
+}
+#tab6 .bj ol.mai li .tehui span:nth-child(1) {
+  background: #f5663e;
+  color: #fff;
+  border-radius: 3px;
+}
+#tab6 .jb {
+  float: left;
+  width: 100%;
+  background: #ff9e83;
+  margin-top: 15px;
+}
+#tab6 .jb ol.man li {
+  float: left;
+  width: 47%;
+  background: #fff;
+  margin-left: 7px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+#tab6 .jb ol.man li img {
+  width: 100%;
+  border-radius: 5px;
+}
+#tab6 .jb ol.man li p {
+  width: 100%;
+  float: left;
+  padding: 0 5px;
+  font-size: 12px;
+  height: 20px;
+  color: #000;
+  margin-top: 3%;
+}
+#tab6 .jb ol.man li .qingcang {
+  width: 100%;
+  float: left;
+  padding: 10px 5px;
+}
+#tab6 .jb ol.man li .qingcang span {
+  width: 30%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+#tab6 .jb ol.man li .qingcang span:nth-child(1) {
+  background: #f5663e;
+  color: #fff;
+  border-radius: 3px;
+}
+#tab4 .proof {
+  background: #ffb9bf;
+  margin-top: 5px;
+  float: left;
+  border-radius: 6px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#tab4 .proof .yi {
+  background: #fff;
+  width: 97%;
+  margin-left: 6px;
+  border-radius: 6px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  float: left;
+  margin-top: 10px;
+  overflow: hidden;
+}
+#tab4 .proof .yi img {
+  padding: 8px 8px;
+  padding-bottom: 0;
+}
+#tab4 .proof .yi ol {
+  float: left;
+  width: 170%;
+}
+#tab4 .proof .yi ol li {
+  width: 20%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+#tab4 .proof .yi ol li img {
+  width: 100%;
+}
+#tab4 .proof .yi ol li p {
+  width: 100%;
+  float: left;
+  padding-left: 5px;
+  font-size: 12px;
+  height: 20px;
+  color: #666867;
+  overflow: hidden;
+  line-height: 20px;
+}
+#tab4 .proof .yi ol li div {
+  float: left;
+  width: 100%;
+}
+#tab4 .proof .yi ol li div img {
+  width: 22px;
+  float: left;
+  padding: 0;
+  margin-left: 9px;
+}
+#tab4 .proof .yi ol li div span {
+  float: left;
+  width: 35%;
+  text-align: center;
+  line-height: 20px;
+}
+#tab2 .zhe {
+  background: #e80145;
+  margin-top: 5px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  float: left;
+}
+#tab2 .zhe img {
+  border-radius: 10px;
+}
+#tab2 .zhe .roll {
+  background: #ffe7c5;
+  width: 98%;
+  margin-left: 3px;
+  float: left;
+}
+#tab2 .zhe .roll ul {
+  width: 100%;
+  background: #ffe7c5;
+}
+#tab2 .zhe .roll ul li {
+  width: 50%;
+  float: left;
+  padding: 5px 5px;
+  position: relative;
+}
+#tab2 .zhe .roll ul li img {
+  width: 100%;
+}
+#tab2 .zhe .roll ul li p {
+  position: absolute;
+  left: 41px;
+  top: 16px;
+  font-size: 20px;
+  color: #feddce;
+}
+#tab2 .zhe .burst {
+  width: 100%;
+}
+#tab2 .zhe .burst ul {
+  width: 100%;
+}
+#tab2 .zhe .burst ul li {
+  width: 31%;
+  float: left;
+  text-align: center;
+  background: #ff5093;
+  margin-left: 6px;
+  margin-top: 5px;
+}
+#tab2 .zhe .burst ul li p {
+  width: 100%;
+  float: left;
+  padding-left: 5px;
+  font-size: 12px;
+  height: 20px;
+  color: #666867;
+  overflow: hidden;
+  line-height: 20px;
+  margin: 0;
+}
+#tab2 .zhe .burst ul li div.img {
+  position: relative;
+}
+#tab2 .zhe .burst ul li div.img img:nth-child(1) {
+  width: 54%;
+  float: left;
+  height: 21px;
+  margin-top: 7%;
+  margin-left: 2%;
+}
+#tab2 .zhe .burst ul li div.img img:nth-child(2) {
+  width: 33%;
+  float: right;
+  margin-right: 5px;
+}
+#tab2 .zhe .burst ul li div.img h4 {
+  position: absolute;
+  left: 6px;
+  top: 43px;
+  font-size: 12px;
+  color: #ffd079;
+}
+#addr .top {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#addr .top h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #000;
+  padding: 10px 0px;
+}
+#addr .divForm {
+  margin-top: 39px;
+}
+#addr .divForm ul {
+  padding: 0;
+}
+#addr .divForm ul li {
+  padding: 30px 0;
+}
+#addr .divForm ul li .left {
+  width: 66px;
+  font-weight: bold;
+  font-size: 16px;
+}
+#addr .divForm ul li .input {
+  border: none;
+  outline: none;
+  padding-left: 30px;
+}
+#addr .divForm ul .li5 div {
+  padding-left: 30px;
+}
+#addr .divForm ul .li5 div button {
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 60px;
+}
+#addr .divForm ul .sex {
+  margin-left: 30%;
+  padding: 10px 0px 10px 80px;
+}
+#addr .divForm ul .sex button {
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 60px;
+}
+#addr .divForm ul .form-group {
+  margin: 0;
+}
+#addr .bg {
+  background: #3f3c35;
+  display: block;
+  text-align: center;
+  color: #e9e039;
+  padding: 10px 0;
+  font-size: 18px;
+  margin: 18px;
+  width: 90%;
+  border-radius: 5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+#peisong {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#peisong .bottom {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 50%;
+}
+#peisong .bottom .box {
+  width: 100%;
+  float: left;
+}
+#peisong .bottom .box h3 {
+  float: left;
+  width: 100%;
+}
+#peisong .bottom .box span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+}
+#peisong .bottom .rdda {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  text-align: center;
+  background-image: linear-gradient(to right, #ff6110, #ff0d5a);
+  line-height: 44px;
+  height: 14%;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  margin-left: 16px;
+}
+#peisong .bottom .addrhref {
+  padding: 20px 10px 0 10px;
+  width: 100%;
+  float: left;
+}
+#peisong .bottom .addrhref .img1 {
+  width: 20px;
+  float: left;
+  padding-top: 10px;
+}
+#peisong .bottom .addrhref .img2 {
+  width: 20px;
+  float: right;
+  padding-top: 10px;
+}

@@ -1,0 +1,18 @@
+$("#imgyi").on("click",function(){
+    $("#imgyi").attr("src","images/roll_03.gif");
+})
+$("#imger").on("click",function(){
+    $("#imger").attr("src","images/roll_03.gif");
+})
+$("#imgsan").on("click",function(){
+    $("#imgsan").attr("src","images/roll_03.gif");
+})
+$("#imgsi").on("click",function(){
+    $("#imgsi").attr("src","images/roll_03.gif");
+})
+$("#imgwu").on("click",function(){
+    $("#imgwu").attr("src","images/roll_03.gif");
+})
+$("#imgliu").on("click",function(){
+    $("#imgliu").attr("src","images/roll_03.gif");
+})
